@@ -1,0 +1,13 @@
+<?php
+
+return array(
+
+    'debugger' => array(
+        'enabled' => true
+    ),
+
+    'cache' => array(
+        'enabled' => false
+    )
+
+);

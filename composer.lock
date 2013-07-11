@@ -1,0 +1,883 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "ddfaf2c966a00d5bd9fc8d44aecf3fcc",
+    "packages": [
+        {
+            "name": "danielmewes/php-rql",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danielmewes/php-rql.git",
+                "reference": "1.7.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danielmewes/php-rql/zipball/1.7.0",
+                "reference": "1.7.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/rdb/rdb.php"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "include-path": [
+                "src/"
+            ],
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Mewes",
+                    "email": "danielmewes@onlinehome.de",
+                    "homepage": "http://dmewes.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP client driver for the RethinkDB query language (ReQL)",
+            "homepage": "http://danielmewes.github.io/php-rql/",
+            "keywords": [
+                "database",
+                "driver",
+                "reql",
+                "rethinkdb"
+            ],
+            "time": "2013-07-07 13:09:08"
+        },
+        {
+            "name": "michaldudek/foundation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaldudek/Foundation.git",
+                "reference": "1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaldudek/Foundation/zipball/1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1",
+                "reference": "1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MD\\Foundation\\Tests": "tests/",
+                    "MD\\Foundation": "src/"
+                },
+                "files": [
+                    "src/constants.php",
+                    "src/MD/functions.php"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "A set of useful PHP functions and (mostly static) classes.",
+            "keywords": [
+                "array",
+                "foundation",
+                "object",
+                "string",
+                "tools",
+                "utils"
+            ],
+            "time": "2013-07-11 19:59:44"
+        },
+        {
+            "name": "michaldudek/knit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaldudek/Knit.git",
+                "reference": "7688d4708d56e593a75b966d3ee8a2f50db21a2f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaldudek/Knit/zipball/7688d4708d56e593a75b966d3ee8a2f50db21a2f",
+                "reference": "7688d4708d56e593a75b966d3ee8a2f50db21a2f",
+                "shasum": ""
+            },
+            "require": {
+                "danielmewes/php-rql": "dev-master",
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "psr/log": "dev-master",
+                "splot/event-manager": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Knit": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Basic and quick PHP ORM/ODM.",
+            "keywords": [
+                "odm",
+                "orm"
+            ],
+            "time": "2013-06-25 22:21:26"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/1.0.0",
+                "reference": "1.0.0",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "splot/assets-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/AssetsModule.git",
+                "reference": "00bf9bb626a65e6012f111b34b6108ba0e2fbada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/AssetsModule/zipball/00bf9bb626a65e6012f111b34b6108ba0e2fbada",
+                "reference": "00bf9bb626a65e6012f111b34b6108ba0e2fbada",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "splot/framework": "dev-master",
+                "symfony/filesystem": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\AssetsModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Assets manager module for Splot Framework.",
+            "keywords": [
+                "JS",
+                "assets",
+                "css",
+                "module",
+                "splot"
+            ],
+            "time": "2013-06-19 21:15:08"
+        },
+        {
+            "name": "splot/cache",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/SplotCache.git",
+                "reference": "3efb8ef0799c5ce39d765207162f05f28c96e817"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/SplotCache/zipball/3efb8ef0799c5ce39d765207162f05f28c96e817",
+                "reference": "3efb8ef0799c5ce39d765207162f05f28c96e817",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\Cache": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Cache system.",
+            "keywords": [
+                "cache"
+            ],
+            "time": "2013-07-01 22:37:09"
+        },
+        {
+            "name": "splot/devtools-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/DevToolsModule.git",
+                "reference": "eee3aa72885b0cac006189b055bb6b0eea2d3c8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/eee3aa72885b0cac006189b055bb6b0eea2d3c8e",
+                "reference": "eee3aa72885b0cac006189b055bb6b0eea2d3c8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "splot/framework": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\DevToolsModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Dev Tools for Splot Framework.",
+            "keywords": [
+                "cli",
+                "command",
+                "generator"
+            ],
+            "time": "2013-07-06 20:56:23"
+        },
+        {
+            "name": "splot/event-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/EventManager.git",
+                "reference": "9f6eb711ceb882292e025f407c0d40dc34d4a2f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/EventManager/zipball/9f6eb711ceb882292e025f407c0d40dc34d4a2f7",
+                "reference": "9f6eb711ceb882292e025f407c0d40dc34d4a2f7",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "psr/log": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\EventManager": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Event manager.",
+            "keywords": [
+                "dispatcher",
+                "event",
+                "publisher",
+                "subscriber"
+            ],
+            "time": "2013-05-01 21:23:49"
+        },
+        {
+            "name": "splot/framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/Framework.git",
+                "reference": "85938e3c774c98d06e58d049a6be652c77ef4676"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/Framework/zipball/85938e3c774c98d06e58d049a6be652c77ef4676",
+                "reference": "85938e3c774c98d06e58d049a6be652c77ef4676",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "splot/cache": "dev-master",
+                "splot/event-manager": "dev-master",
+                "splot/log": "dev-master",
+                "symfony/console": "dev-master",
+                "symfony/filesystem": "dev-master",
+                "symfony/http-foundation": "2.1.*",
+                "symfony/process": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\Framework": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Splot Framework.",
+            "keywords": [
+                "framework",
+                "php",
+                "splot"
+            ],
+            "time": "2013-07-06 21:08:59"
+        },
+        {
+            "name": "splot/knit-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/KnitModule.git",
+                "reference": "0aa4fea04c451f047c2a4215f8e4cb9798d6ca71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/KnitModule/zipball/0aa4fea04c451f047c2a4215f8e4cb9798d6ca71",
+                "reference": "0aa4fea04c451f047c2a4215f8e4cb9798d6ca71",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/knit": "dev-master",
+                "php": ">=5.3.3",
+                "splot/framework": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\KnitModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Knit integration with Splot Framework.",
+            "keywords": [
+                "odm",
+                "orm"
+            ],
+            "time": "2013-07-11 22:37:32"
+        },
+        {
+            "name": "splot/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/Log.git",
+                "reference": "22569b83a71a234554790645ec10fac5a94435d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/Log/zipball/22569b83a71a234554790645ec10fac5a94435d7",
+                "reference": "22569b83a71a234554790645ec10fac5a94435d7",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "psr/log": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\Log": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Log system.",
+            "keywords": [
+                "log",
+                "php",
+                "splot"
+            ],
+            "time": "2013-07-06 20:37:33"
+        },
+        {
+            "name": "splot/twig-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/TwigModule.git",
+                "reference": "9823e2bdb620a03521d31b0d7b54a497223171f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/TwigModule/zipball/9823e2bdb620a03521d31b0d7b54a497223171f5",
+                "reference": "9823e2bdb620a03521d31b0d7b54a497223171f5",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "splot/framework": "dev-master",
+                "twig/twig": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\TwigModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Twig integration with Splot Framework.",
+            "keywords": [
+                "module",
+                "template",
+                "templating",
+                "twig"
+            ],
+            "time": "2013-06-04 21:19:47"
+        },
+        {
+            "name": "splot/weblog-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/WebLogModule.git",
+                "reference": "b7084e3e430746607a927537b4d1c0d89554d68f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/WebLogModule/zipball/b7084e3e430746607a927537b4d1c0d89554d68f",
+                "reference": "b7084e3e430746607a927537b4d1c0d89554d68f",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "splot/framework": "dev-master",
+                "splot/log": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splot\\WebLogModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "WebLog module for Splot Framework.",
+            "keywords": [
+                "debug",
+                "log",
+                "php",
+                "tools",
+                "utils"
+            ],
+            "time": "2013-07-01 22:34:45"
+        },
+        {
+            "name": "symfony/console",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/c374f12670a4e6b6b72ef2a2d58b75534d94609c",
+                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-07-11 19:37:15"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem.git",
+                "reference": "7975f9df488adbc9cef2089bac2887f14085481f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/7975f9df488adbc9cef2089bac2887f14085481f",
+                "reference": "7975f9df488adbc9cef2089bac2887f14085481f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-06-11 07:15:38"
+        },
+        {
+            "name": "symfony/http-foundation",
+            "version": "2.1.x-dev",
+            "target-dir": "Symfony/Component/HttpFoundation",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/HttpFoundation.git",
+                "reference": "v2.1.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.1.11",
+                "reference": "v2.1.11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\HttpFoundation": "",
+                    "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-05-26 18:42:07"
+        },
+        {
+            "name": "symfony/process",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Process",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Process.git",
+                "reference": "998d489806011e1d790db5fc0284e6083cc8ea8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/998d489806011e1d790db5fc0284e6083cc8ea8b",
+                "reference": "998d489806011e1d790db5fc0284e6083cc8ea8b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Process\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "http://symfony.com",
+            "time": "2013-07-08 13:37:01"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "89007e5cc13011dbc063bd35aa6eb4d62754f727"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/89007e5cc13011dbc063bd35aa6eb4d62754f727",
+                "reference": "89007e5cc13011dbc063bd35aa6eb4d62754f727",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-07-05 17:16:02"
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "dev-3.0.0-wip",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twitter/bootstrap.git",
+                "reference": "606d6e81d445ff58295b934d52ac1e31ae2052a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/606d6e81d445ff58295b934d52ac1e31ae2052a6",
+                "reference": "606d6e81d445ff58295b934d52ac1e31ae2052a6",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                },
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                }
+            ],
+            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "bootstrap",
+                "css"
+            ],
+            "time": "2013-07-09 19:43:15"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "splot/framework": 20,
+        "splot/assets-module": 20,
+        "splot/devtools-module": 20,
+        "splot/twig-module": 20,
+        "splot/knit-module": 20,
+        "splot/weblog-module": 20,
+        "twitter/bootstrap": 20
+    },
+    "platform": {
+        "php": ">=5.3.9"
+    },
+    "platform-dev": [
+
+    ]
+}

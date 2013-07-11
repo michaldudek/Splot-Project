@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /
+FileETag none
+
+Options -MultiViews
+
+###########################
+##### SPLOT REWRITING #####
+###########################
+
+#
+# Rewrite everything else!
+# But only if the requested file doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)                           app.php                         [L,QSA]

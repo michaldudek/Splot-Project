@@ -1,0 +1,9 @@
+/vendor/
+/app/cache/
+/app/logs/
+/web/modules
+/web/application
+
+*.sublime-project
+*.sublime-workspace
+codekit-config.json

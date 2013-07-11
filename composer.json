@@ -1,0 +1,43 @@
+{
+    "name": "michaldudek/splot-project",
+    "description": "Project setup for Splot Framework that contains several additional assets and modules that I like to use.",
+    "keywords": ["splot", "application", "skeleton", "project"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michał Dudek",
+            "email": "michal@michaldudek.pl"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packagist.org/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "splot/framework": "dev-master",
+        "splot/assets-module": "dev-master",
+        "splot/devtools-module": "dev-master",
+        "splot/twig-module": "dev-master",
+        "splot/knit-module": "dev-master",
+        "splot/weblog-module": "dev-master",
+
+        "twitter/bootstrap": "dev-3.0.0-wip"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
+            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
+        ],
+        "post-update-cmd": [
+            "Splot\\AssetsModule\\Composer\\ScriptHandler::installAssets",
+            "Splot\\DevToolsModule\\Composer\\ScriptHandler::clearCache"
+        ]
+    }
+}
