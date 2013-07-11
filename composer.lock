@@ -276,12 +276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/DevToolsModule.git",
-                "reference": "eee3aa72885b0cac006189b055bb6b0eea2d3c8e"
+                "reference": "434fd121581f95ee211023c128649b0b36722436"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/eee3aa72885b0cac006189b055bb6b0eea2d3c8e",
-                "reference": "eee3aa72885b0cac006189b055bb6b0eea2d3c8e",
+                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/434fd121581f95ee211023c128649b0b36722436",
+                "reference": "434fd121581f95ee211023c128649b0b36722436",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
                 "command",
                 "generator"
             ],
-            "time": "2013-07-06 20:56:23"
+            "time": "2013-07-11 23:29:50"
         },
         {
             "name": "splot/event-manager",
@@ -826,12 +826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/bootstrap.git",
-                "reference": "606d6e81d445ff58295b934d52ac1e31ae2052a6"
+                "reference": "89555cb61c6b63086a099823bf4c37f0798aa4c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/606d6e81d445ff58295b934d52ac1e31ae2052a6",
-                "reference": "606d6e81d445ff58295b934d52ac1e31ae2052a6",
+                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/89555cb61c6b63086a099823bf4c37f0798aa4c6",
+                "reference": "89555cb61c6b63086a099823bf4c37f0798aa4c6",
                 "shasum": ""
             },
             "type": "library",
@@ -855,7 +855,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-07-09 19:43:15"
+            "time": "2013-07-11 21:17:11"
         }
     ],
     "packages-dev": [
