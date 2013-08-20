@@ -1,6 +1,8 @@
 /vendor/
 /app/cache/
+/app/config/config.*.php
 /app/logs/
+/app/Resources/public/components/*
 /web/modules
 /web/application
 

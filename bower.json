@@ -1,0 +1,15 @@
+{
+    "name": "MDSplotProject",
+    "version": "0.0.0",
+    "dependencies": {
+        "q": "~0.9",
+        "jquery": "~2.0",
+        "jquery-appendix": "*",
+        "bootstrap": "~3.0",
+        "angular": "~1.0",
+        "underscore": "~1.5",
+        "lodash": "~1.3",
+        "font-awesome": "~3.2"
+    },
+    "devDependencies": {}
+}

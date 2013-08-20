@@ -20,7 +20,7 @@ class Application extends AbstractApplication
             new Splot\TwigModule\SplotTwigModule(),
             new Splot\AssetsModule\SplotAssetsModule(),
 
-            
+            new MDApplication\Modules\Placeholder\MDApplicationPlaceholderModule()
         );
 
         if ($this->getEnv() === Framework::ENV_DEV || Debugger::isCli()) {

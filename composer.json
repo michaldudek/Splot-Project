@@ -16,15 +16,13 @@
         }
     ],
     "require": {
-        "php": ">=5.3.9",
+        "php": ">=5.4.0",
         "splot/framework": "dev-master",
         "splot/assets-module": "dev-master",
         "splot/devtools-module": "dev-master",
         "splot/twig-module": "dev-master",
         "splot/knit-module": "dev-master",
-        "splot/weblog-module": "dev-master",
-
-        "twitter/bootstrap": "dev-3.0.0-wip"
+        "splot/weblog-module": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {

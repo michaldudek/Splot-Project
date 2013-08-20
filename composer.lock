@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ddfaf2c966a00d5bd9fc8d44aecf3fcc",
+    "hash": "10e4b60f29c2ecc4eedfd49c5271ad28",
     "packages": [
         {
             "name": "danielmewes/php-rql",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaldudek/Foundation.git",
-                "reference": "1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1"
+                "reference": "6bc53525a45dfe41115ca5b18b9cb25901cffc6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaldudek/Foundation/zipball/1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1",
-                "reference": "1c600cd78ca5d11ea2bf22035a12a93fb1a95ec1",
+                "url": "https://api.github.com/repos/michaldudek/Foundation/zipball/6bc53525a45dfe41115ca5b18b9cb25901cffc6e",
+                "reference": "6bc53525a45dfe41115ca5b18b9cb25901cffc6e",
                 "shasum": ""
             },
             "require": {
@@ -100,7 +100,7 @@
                 "tools",
                 "utils"
             ],
-            "time": "2013-07-11 19:59:44"
+            "time": "2013-07-31 11:57:43"
         },
         {
             "name": "michaldudek/knit",
@@ -108,19 +108,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaldudek/Knit.git",
-                "reference": "7688d4708d56e593a75b966d3ee8a2f50db21a2f"
+                "reference": "dd6e074634b8c34c9d6c408d009607df968b4eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaldudek/Knit/zipball/7688d4708d56e593a75b966d3ee8a2f50db21a2f",
-                "reference": "7688d4708d56e593a75b966d3ee8a2f50db21a2f",
+                "url": "https://api.github.com/repos/michaldudek/Knit/zipball/dd6e074634b8c34c9d6c408d009607df968b4eb4",
+                "reference": "dd6e074634b8c34c9d6c408d009607df968b4eb4",
                 "shasum": ""
             },
             "require": {
                 "danielmewes/php-rql": "dev-master",
                 "michaldudek/foundation": "dev-master",
                 "php": ">=5.3.3",
-                "psr/log": "dev-master",
+                "psr/log": "1.0.*",
                 "splot/event-manager": "dev-master"
             },
             "type": "library",
@@ -144,19 +144,19 @@
                 "odm",
                 "orm"
             ],
-            "time": "2013-06-25 22:21:26"
+            "time": "2013-08-20 20:28:09"
         },
         {
             "name": "psr/log",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/log.git",
+                "url": "https://github.com/php-fig/log",
                 "reference": "1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/1.0.0",
+                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
                 "reference": "1.0.0",
                 "shasum": ""
             },
@@ -190,12 +190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/AssetsModule.git",
-                "reference": "00bf9bb626a65e6012f111b34b6108ba0e2fbada"
+                "reference": "2768d26eb9ac4468e8dc5bdba90a9afb416df80f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/AssetsModule/zipball/00bf9bb626a65e6012f111b34b6108ba0e2fbada",
-                "reference": "00bf9bb626a65e6012f111b34b6108ba0e2fbada",
+                "url": "https://api.github.com/repos/splot/AssetsModule/zipball/2768d26eb9ac4468e8dc5bdba90a9afb416df80f",
+                "reference": "2768d26eb9ac4468e8dc5bdba90a9afb416df80f",
                 "shasum": ""
             },
             "require": {
@@ -228,7 +228,7 @@
                 "module",
                 "splot"
             ],
-            "time": "2013-06-19 21:15:08"
+            "time": "2013-07-14 22:56:49"
         },
         {
             "name": "splot/cache",
@@ -236,12 +236,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/SplotCache.git",
-                "reference": "3efb8ef0799c5ce39d765207162f05f28c96e817"
+                "reference": "a83cf70c14a7c61aac320f3c518f7916ab2db28a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/SplotCache/zipball/3efb8ef0799c5ce39d765207162f05f28c96e817",
-                "reference": "3efb8ef0799c5ce39d765207162f05f28c96e817",
+                "url": "https://api.github.com/repos/splot/SplotCache/zipball/a83cf70c14a7c61aac320f3c518f7916ab2db28a",
+                "reference": "a83cf70c14a7c61aac320f3c518f7916ab2db28a",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
             "keywords": [
                 "cache"
             ],
-            "time": "2013-07-01 22:37:09"
+            "time": "2013-08-12 21:13:53"
         },
         {
             "name": "splot/devtools-module",
@@ -276,12 +276,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/DevToolsModule.git",
-                "reference": "434fd121581f95ee211023c128649b0b36722436"
+                "reference": "83c076a44ae5c4d599486462ccc4bcf97f2bc6ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/434fd121581f95ee211023c128649b0b36722436",
-                "reference": "434fd121581f95ee211023c128649b0b36722436",
+                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/83c076a44ae5c4d599486462ccc4bcf97f2bc6ea",
+                "reference": "83c076a44ae5c4d599486462ccc4bcf97f2bc6ea",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
                 "command",
                 "generator"
             ],
-            "time": "2013-07-11 23:29:50"
+            "time": "2013-08-19 22:27:28"
         },
         {
             "name": "splot/event-manager",
@@ -318,22 +318,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/EventManager.git",
-                "reference": "9f6eb711ceb882292e025f407c0d40dc34d4a2f7"
+                "reference": "1cc64056057cd6557558b7574015e1df2c1f7394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/EventManager/zipball/9f6eb711ceb882292e025f407c0d40dc34d4a2f7",
-                "reference": "9f6eb711ceb882292e025f407c0d40dc34d4a2f7",
+                "url": "https://api.github.com/repos/splot/EventManager/zipball/1cc64056057cd6557558b7574015e1df2c1f7394",
+                "reference": "1cc64056057cd6557558b7574015e1df2c1f7394",
                 "shasum": ""
             },
             "require": {
                 "michaldudek/foundation": "dev-master",
                 "php": ">=5.3.3",
-                "psr/log": "dev-master"
+                "psr/log": "1.0.*"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "Splot\\EventManager\\Tests": "tests/",
                     "Splot\\EventManager": "src/"
                 }
             },
@@ -354,7 +355,7 @@
                 "publisher",
                 "subscriber"
             ],
-            "time": "2013-05-01 21:23:49"
+            "time": "2013-07-30 22:28:50"
         },
         {
             "name": "splot/framework",
@@ -362,17 +363,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/Framework.git",
-                "reference": "85938e3c774c98d06e58d049a6be652c77ef4676"
+                "reference": "be66ff38f737bbed948a261afa20fa0462ee8446"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/Framework/zipball/85938e3c774c98d06e58d049a6be652c77ef4676",
-                "reference": "85938e3c774c98d06e58d049a6be652c77ef4676",
+                "url": "https://api.github.com/repos/splot/Framework/zipball/be66ff38f737bbed948a261afa20fa0462ee8446",
+                "reference": "be66ff38f737bbed948a261afa20fa0462ee8446",
                 "shasum": ""
             },
             "require": {
                 "michaldudek/foundation": "dev-master",
                 "php": ">=5.3.3",
+                "psr/log": "1.0.*",
                 "splot/cache": "dev-master",
                 "splot/event-manager": "dev-master",
                 "splot/log": "dev-master",
@@ -384,6 +386,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "Splot\\Framework\\Tests": "tests/",
                     "Splot\\Framework": "src/"
                 }
             },
@@ -403,7 +406,7 @@
                 "php",
                 "splot"
             ],
-            "time": "2013-07-06 21:08:59"
+            "time": "2013-08-18 22:39:48"
         },
         {
             "name": "splot/knit-module",
@@ -453,18 +456,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/Log.git",
-                "reference": "22569b83a71a234554790645ec10fac5a94435d7"
+                "reference": "0c2cc488ee6484809f8d4aaf9a9c2d868bb40122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/Log/zipball/22569b83a71a234554790645ec10fac5a94435d7",
-                "reference": "22569b83a71a234554790645ec10fac5a94435d7",
+                "url": "https://api.github.com/repos/splot/Log/zipball/0c2cc488ee6484809f8d4aaf9a9c2d868bb40122",
+                "reference": "0c2cc488ee6484809f8d4aaf9a9c2d868bb40122",
                 "shasum": ""
             },
             "require": {
                 "michaldudek/foundation": "dev-master",
                 "php": ">=5.3.3",
-                "psr/log": "dev-master"
+                "psr/log": "1.0.*"
             },
             "type": "library",
             "autoload": {
@@ -488,7 +491,7 @@
                 "php",
                 "splot"
             ],
-            "time": "2013-07-06 20:37:33"
+            "time": "2013-08-12 20:43:06"
         },
         {
             "name": "splot/twig-module",
@@ -496,12 +499,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/TwigModule.git",
-                "reference": "9823e2bdb620a03521d31b0d7b54a497223171f5"
+                "reference": "1af48f4193523d923d23a7b092b9c987fd2c35f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/TwigModule/zipball/9823e2bdb620a03521d31b0d7b54a497223171f5",
-                "reference": "9823e2bdb620a03521d31b0d7b54a497223171f5",
+                "url": "https://api.github.com/repos/splot/TwigModule/zipball/1af48f4193523d923d23a7b092b9c987fd2c35f1",
+                "reference": "1af48f4193523d923d23a7b092b9c987fd2c35f1",
                 "shasum": ""
             },
             "require": {
@@ -533,7 +536,7 @@
                 "templating",
                 "twig"
             ],
-            "time": "2013-06-04 21:19:47"
+            "time": "2013-08-20 20:58:28"
         },
         {
             "name": "splot/weblog-module",
@@ -588,12 +591,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c"
+                "reference": "2b252b1f6b30c29410772eaddf1c567a9f2bc1ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/c374f12670a4e6b6b72ef2a2d58b75534d94609c",
-                "reference": "c374f12670a4e6b6b72ef2a2d58b75534d94609c",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/2b252b1f6b30c29410772eaddf1c567a9f2bc1ab",
+                "reference": "2b252b1f6b30c29410772eaddf1c567a9f2bc1ab",
                 "shasum": ""
             },
             "require": {
@@ -632,7 +635,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-11 19:37:15"
+            "time": "2013-08-17 16:34:58"
         },
         {
             "name": "symfony/filesystem",
@@ -641,12 +644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "7975f9df488adbc9cef2089bac2887f14085481f"
+                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/7975f9df488adbc9cef2089bac2887f14085481f",
-                "reference": "7975f9df488adbc9cef2089bac2887f14085481f",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
+                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
                 "shasum": ""
             },
             "require": {
@@ -679,7 +682,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-11 07:15:38"
+            "time": "2013-08-09 07:26:54"
         },
         {
             "name": "symfony/http-foundation",
@@ -688,12 +691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "v2.1.11"
+                "reference": "79fd1ab0b85e782d342e83799b39b729fd1a30ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/v2.1.11",
-                "reference": "v2.1.11",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/79fd1ab0b85e782d342e83799b39b729fd1a30ee",
+                "reference": "79fd1ab0b85e782d342e83799b39b729fd1a30ee",
                 "shasum": ""
             },
             "require": {
@@ -722,7 +725,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-26 18:42:07"
+            "time": "2013-08-07 13:58:42"
         },
         {
             "name": "symfony/process",
@@ -731,12 +734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "998d489806011e1d790db5fc0284e6083cc8ea8b"
+                "reference": "a5f3e6456af26ca5406ab970afe4155648443c8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/998d489806011e1d790db5fc0284e6083cc8ea8b",
-                "reference": "998d489806011e1d790db5fc0284e6083cc8ea8b",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/a5f3e6456af26ca5406ab970afe4155648443c8b",
+                "reference": "a5f3e6456af26ca5406ab970afe4155648443c8b",
                 "shasum": ""
             },
             "require": {
@@ -769,7 +772,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-07-08 13:37:01"
+            "time": "2013-08-15 17:09:02"
         },
         {
             "name": "twig/twig",
@@ -777,12 +780,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "89007e5cc13011dbc063bd35aa6eb4d62754f727"
+                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/89007e5cc13011dbc063bd35aa6eb4d62754f727",
-                "reference": "89007e5cc13011dbc063bd35aa6eb4d62754f727",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
+                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
                 "shasum": ""
             },
             "require": {
@@ -791,7 +794,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.13-dev"
+                    "dev-master": "1.14-dev"
                 }
             },
             "autoload": {
@@ -818,44 +821,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-07-05 17:16:02"
-        },
-        {
-            "name": "twitter/bootstrap",
-            "version": "dev-3.0.0-wip",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twitter/bootstrap.git",
-                "reference": "89555cb61c6b63086a099823bf4c37f0798aa4c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twitter/bootstrap/zipball/89555cb61c6b63086a099823bf4c37f0798aa4c6",
-                "reference": "89555cb61c6b63086a099823bf4c37f0798aa4c6",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                },
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                }
-            ],
-            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "http://getbootstrap.com",
-            "keywords": [
-                "bootstrap",
-                "css"
-            ],
-            "time": "2013-07-11 21:17:11"
+            "time": "2013-08-07 12:53:34"
         }
     ],
     "packages-dev": [
@@ -871,11 +837,10 @@
         "splot/devtools-module": 20,
         "splot/twig-module": 20,
         "splot/knit-module": 20,
-        "splot/weblog-module": 20,
-        "twitter/bootstrap": 20
+        "splot/weblog-module": 20
     },
     "platform": {
-        "php": ">=5.3.9"
+        "php": ">=5.4.0"
     },
     "platform-dev": [
 

@@ -4,7 +4,7 @@
     <title>MichalDudek Splot Project Skeleton</title>
 
     {{ stylesheet('::lib/bootstrap.css', 'lib') }}
-    {{ stylesheet('::lib/font-awesome/font-awesome.css', 'lib') }}
+    {{ stylesheet('::lib/font-awesome.css', 'lib') }}
     {{ stylesheet('::global.css', 'app') }}
     {{ stylesheets() }}
 </head>
@@ -15,22 +15,32 @@
         {% endblock %}
     {% endblock %}
 
-    {{ javascript('::lib/jquery2.js', 'lib') }}
-    {{ javascript('::lib/jquery.appendix.js', 'lib') }}
 
-    {#{ javascript('::lib/bootstrap/affix.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/alert.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/button.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/carousel.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/collapse.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/dropdown.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/modal.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/popover.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/scrollspy.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/tab.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/tooltip.js', 'lib') }#}
-    {#{ javascript('::lib/bootstrap/transition.js', 'lib') }#}
+    {# ##########################################
+       # JAVASCRIPT
+       ########################################## #}
+    {# Most common use JS libraries are included below, feel free to remove them or add new #}
+    {{ javascript('::components/lodash/lodash.js', 'lib') }}
+    {{ javascript('::components/q/q.min.js', 'lib') }}
+    {{ javascript('::components/jquery/jquery.min.js', 'lib') }}
+    {{ javascript('::components/jquery-appendix/jquery.appendix.min.js', 'lib') }}
+    {{ javascript('::components/angular/angular.min.js', 'no-min') }}
 
+    {# Bootstrap 3 #}
+    {#{ javascript('::components/bootstrap/js/affix.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/alert.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/button.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/carousel.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/collapse.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/dropdown.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/modal.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/popover.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/scrollspy.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/tab.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/tooltip.js', 'lib') }#}
+    {#{ javascript('::components/bootstrap/js/transition.js', 'lib') }#}
+
+    {# APPLICATION JS #}
     {{ javascript('::app.js', 'lib') }}
     {{ javascript('::global.js', 'app') }}
 
