@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "10e4b60f29c2ecc4eedfd49c5271ad28",
+    "hash": "9eb732fc89c79a54106bcb5a5ef3d529",
     "packages": [
         {
             "name": "danielmewes/php-rql",
@@ -734,12 +734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "a5f3e6456af26ca5406ab970afe4155648443c8b"
+                "reference": "f82c7aac2cccdb0b90a4066a2eef3fd40533e466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/a5f3e6456af26ca5406ab970afe4155648443c8b",
-                "reference": "a5f3e6456af26ca5406ab970afe4155648443c8b",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/f82c7aac2cccdb0b90a4066a2eef3fd40533e466",
+                "reference": "f82c7aac2cccdb0b90a4066a2eef3fd40533e466",
                 "shasum": ""
             },
             "require": {
@@ -772,7 +772,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-15 17:09:02"
+            "time": "2013-08-21 07:59:24"
         },
         {
             "name": "twig/twig",
