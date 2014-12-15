@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head_title %}
+        <title>MichalDudek Splot Project Skeleton</title>
+    {% endblock %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.0.8/es5-shim.min.js"></script>
+    <![endif]-->
+
+    {{ stylesheet('/css/lib/bootstrap.css', 'lib') }}
+    {{ stylesheet('/css/lib/bootstrap.extend.css', 'lib') }}
+    {{ stylesheet('/css/lib/font-awesome.css', 'lib') }}
+    {{ stylesheet('/css/*.css', 'app') }}
+    {{ stylesheets() }}
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body {% block body_attr %}{% endblock %}>
+
+    {% block body %}
+    {% endblock %}
+
+
+    {# ##########################################
+       # JAVASCRIPT
+       ########################################## #}
+    {# Most common use JS libraries are included below, feel free to remove them or add new #}
+    {{ javascript('/components/lodash/dist/lodash.js', 'lib') }}
+    {#{ javascript('/components/q/q.min.js', 'lib') }#}
+    {{ javascript('/components/jquery/dist/jquery.js', 'lib') }}
+    {{ javascript('/components/jquery-appendix/src/jquery.appendix.js', 'lib') }}
+    {#{ javascript('/components/jquery-autosize/jquery.autosize.js', 'lib') }#}
+    {{ javascript('/components/angular/angular.js', 'lib') }}
+    {{ javascript('/components/angular-animate/angular-animate.js', 'lib') }}
+    {{ javascript('/components/angular-cache/dist/angular-cache.js', 'lib') }}
+    {{ javascript('/components/angular-cookies/angular-cookies.js', 'lib') }}
+    {{ javascript('/components/angular-bindonce/bindonce.js', 'lib') }}
+    {{ javascript('/components/angular-ui-router/release/angular-ui-router.js', 'lib') }}
+
+    {# jquery file upload #}
+    {#{ javascript('/components/blueimp-file-upload/js/jquery.iframe-transport.js', 'lib') }}
+    {{ javascript('/components/blueimp-file-upload/js/jquery.fileupload.js', 'lib') }}
+    {{ javascript('/components/blueimp-file-upload/js/jquery.fileupload-process.js', 'lib') }}
+    {{ javascript('/components/blueimp-file-upload/js/jquery.fileupload-validate.js', 'lib') }}
+    {{ javascript('/components/blueimp-file-upload/js/jquery.fileupload-angular.js', 'lib') }}
+    {{ stylesheet('/components/blueimp-file-upload/css/jquery.fileupload.css', 'lib') }#}
+
+    {# Bootstrap 3 #}
+    {#{ javascript('/components/bootstrap/js/affix.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/alert.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/button.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/carousel.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/collapse.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/dropdown.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/modal.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/popover.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/scrollspy.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/tab.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/tooltip.js', 'lib') }#}
+    {#{ javascript('/components/bootstrap/js/transition.js', 'lib') }#}
+
+    {# Angular Strap #}
+    {#{ javascript('/components/angular-strap/dist/modules/date-parser.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/datepicker.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/datepicker.tpl.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/dimensions.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/modal.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/modal.tpl.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/timepicker.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/timepicker.tpl.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/tooltip.js', 'lib') }#}
+    {#{ javascript('/components/angular-strap/dist/modules/tooltip.tpl.js', 'lib') }#}
+
+    {# OTHER LIBS (NOT BOWER) #}
+    {{ javascript('/js/lib/{,**/}*.js', 'lib') }}
+
+    {# APPLICATION JS #}
+    {{ javascript('/js/app/{,**/}*.js', 'app') }}
+    {{ javascript('/js/app.js', 'app') }}
+
+    {{ javascripts() }}
+
+</body>
+</html>
