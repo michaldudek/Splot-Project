@@ -1,11 +1,20 @@
-/vendor/
-/app/cache/
-/app/config/config.*.php
-/app/logs/
-/app/Resources/public/components/*
-/web/modules
-/web/application
+app/cache/
+app/config/config.*.php
+app/logs/
+app/Resources/public/components/*
+app/tests/coverage
+config/parameters.yml
+logs/
+node_modules/
+web/_min
+web/application
+web/filestorage
+web/modules
+web/modulesapp
+vendor/
 
+.cookbooks
+.vagrant
 *.sublime-project
 *.sublime-workspace
 codekit-config.json
