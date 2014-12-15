@@ -1,0 +1,21 @@
+@import "lib/lesselements.less";
+
+/* TRANSITION TIMES */
+@transition-long    : 0.65s;
+@transition-normal  : 0.2s;
+
+/* HELPERS */
+.text-overflow(@overflow: ellipsis) {
+    overflow: hidden;
+    text-overflow: @overflow;
+    white-space: nowrap;;
+}
+
+.disable-ng-animation() {
+    &.ng-enter, &.ng-leave {
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+}

@@ -1,0 +1,121 @@
+@import "../_varmix.less";
+
+.modal {
+    display: block;
+}
+.modal-body:before,
+.modal-body:after {
+    display: table;
+    content: " ";
+}
+.modal-header {
+    word-wrap: break-word;
+}
+.modal-header:before,
+.modal-header:after {
+    display: table;
+    content: " ";
+}
+.modal-dialog {
+    margin: 60px auto;
+}
+
+.modal-backdrop.am-fade {
+    opacity: 0.5;
+    .transition(0.15s, linear, opacity);
+
+    &.ng-enter {
+        opacity: 0;
+
+        &.ng-enter-active {
+            opacity: 0.5;
+        }
+    }
+    
+    &.ng-leave {
+        opacity: 0.5;
+        
+        &.ng-leave-active {
+            opacity: 0;
+        }
+    }
+}
+
+.dropdown-menu {
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.datepicker, .timepicker {
+    .btn {
+        border: 0;
+    }
+}
+
+.progress-bar {
+    .transition(2s, linear);
+}
+
+.btn {
+    &.btn-long {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.btn-group.btn-group-block {
+    display: block;
+
+    .btn:not(.dropdown-toggle) {
+        display: block;
+        float: none;
+        width: ~"calc(100% - 25px)";
+    }
+
+    .dropdown-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+
+        li {
+            > a, > span, > label {
+                display: block;
+                padding: 3px 20px;
+                clear: both;
+                color: #333;
+                line-height: 1.428571429;
+                .text-overflow();
+                cursor: pointer;
+            }
+        }
+
+        &.dropdown-select {
+            li {
+                > a, > span, > label {
+                    padding-left: 30px;
+                    position: relative;
+                }
+
+                .fa-check {
+                    position: absolute;
+                    top: 6px;
+                    left: 8px;
+                    display: none;
+                }
+
+                &.selected {
+                    > a, > span, > label {
+
+                        > .fa-check {
+                            display: inline-block;;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
