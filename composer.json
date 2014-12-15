@@ -17,14 +17,13 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "splot/framework": "dev-master",
+        "splot/framework": "0.8.*@dev",
+        "splot/framework-extra-module": "dev-master",
         "splot/assets-module": "dev-master",
-        "splot/twig-module": "dev-master",
-        "splot/knit-module": "dev-master"
-    },
-    "require-dev": {
+        "splot/twig-module": ">=0.8",
+        "splot/knit-module": "dev-master",
         "splot/devtools-module": "dev-master",
-        "splot/weblog-module": "dev-master"
+        "splot/weblog-module": ">=0.8"
     },
     "minimum-stability": "dev",
     "autoload": {

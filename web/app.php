@@ -1,7 +1,9 @@
 <?php
 use Splot\Framework\Framework;
 
-require_once realpath(dirname(__FILE__) .'/../vendor/autoload.php');
-require_once realpath(dirname(__FILE__) .'/../app/Application.php');
+$rootDir = dirname(__FILE__) .'/..';
 
-Framework::web(new Application(), array());
+require_once $rootDir .'/vendor/autoload.php';
+require_once $rootDir .'/app/Application.php';
+
+Framework::run(new Application());

@@ -1,57 +1,303 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "9eb732fc89c79a54106bcb5a5ef3d529",
+    "hash": "85d05a5adcf4e10195b5837ce626133c",
     "packages": [
         {
-            "name": "danielmewes/php-rql",
-            "version": "dev-master",
+            "name": "container-interop/container-interop",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/danielmewes/php-rql.git",
-                "reference": "1.7.0"
+                "url": "https://github.com/container-interop/container-interop.git",
+                "reference": "b4274c871bfd1ae8d8e527ba11734f4df1573e48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielmewes/php-rql/zipball/1.7.0",
-                "reference": "1.7.0",
+                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/b4274c871bfd1ae8d8e527ba11734f4df1573e48",
+                "reference": "b4274c871bfd1ae8d8e527ba11734f4df1573e48",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/Interop/Container/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+            "time": "2014-03-16 14:50:05"
+        },
+        {
+            "name": "filp/whoops",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "542400d23369c3c9f1ff221858ba4b220bcc4245"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/542400d23369c3c9f1ff221858ba4b220bcc4245",
+                "reference": "542400d23369c3c9f1ff221858ba4b220bcc4245",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
             "autoload": {
-                "files": [
-                    "src/rdb/rdb.php"
+                "psr-0": {
+                    "Whoops": "src/"
+                },
+                "classmap": [
+                    "src/deprecated"
                 ]
             },
             "notification-url": "http://packagist.org/downloads/",
-            "include-path": [
-                "src/"
-            ],
             "license": [
-                "Apache-2.0"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Daniel Mewes",
-                    "email": "danielmewes@onlinehome.de",
-                    "homepage": "http://dmewes.com",
+                    "name": "Filipe Dobreira",
+                    "homepage": "https://github.com/filp",
                     "role": "Developer"
                 }
             ],
-            "description": "A PHP client driver for the RethinkDB query language (ReQL)",
-            "homepage": "http://danielmewes.github.io/php-rql/",
+            "description": "php error handling for cool kids",
+            "homepage": "https://github.com/filp/whoops",
             "keywords": [
-                "database",
-                "driver",
-                "reql",
-                "rethinkdb"
+                "error",
+                "exception",
+                "handling",
+                "library",
+                "silex-provider",
+                "whoops",
+                "zf2"
             ],
-            "time": "2013-07-07 13:09:08"
+            "time": "2014-11-29 09:19:11"
+        },
+        {
+            "name": "gregwar/cache",
+            "version": "v1.0.10",
+            "target-dir": "Gregwar/Cache",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Cache.git",
+                "reference": "0a1a02e4943e95f491b3d2395609247385975622"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Cache/zipball/0a1a02e4943e95f491b3d2395609247385975622",
+                "reference": "0a1a02e4943e95f491b3d2395609247385975622",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Gregwar\\Cache": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gregwar",
+                    "email": "g.passault@gmail.com"
+                }
+            ],
+            "description": "A lightweight file-system cache system",
+            "keywords": [
+                "cache",
+                "caching",
+                "file-system",
+                "system"
+            ],
+            "time": "2014-09-24 11:23:30"
+        },
+        {
+            "name": "gregwar/image",
+            "version": "v2.0.18",
+            "target-dir": "Gregwar/Image",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Image.git",
+                "reference": "280ed7ade8036aab059b1597e299f582157a2b37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Gregwar/Image/zipball/280ed7ade8036aab059b1597e299f582157a2b37",
+                "reference": "280ed7ade8036aab059b1597e299f582157a2b37",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "gregwar/cache": "1.*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "behat/transliterator": "Transliterator provides ability to set non-latin1 pretty names"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Gregwar\\Image": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                }
+            ],
+            "description": "Image handling",
+            "homepage": "https://github.com/Gregwar/Image",
+            "keywords": [
+                "gd",
+                "image"
+            ],
+            "time": "2014-11-10 13:57:24"
+        },
+        {
+            "name": "kriswallsmith/assetic",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/b20efe38845d20458702f97f3ff625d80805897b",
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/process": "~2.1"
+            },
+            "require-dev": {
+                "cssmin/cssmin": "*",
+                "joliclic/javascript-packer": "*",
+                "kamicane/packager": "*",
+                "leafo/lessphp": "*",
+                "leafo/scssphp": "*",
+                "leafo/scssphp-compass": "*",
+                "mrclay/minify": "*",
+                "patchwork/jsqueeze": "~1.0",
+                "phpunit/phpunit": "~4",
+                "psr/log": "~1.0",
+                "ptachoire/cssembed": "*",
+                "twig/twig": "~1.6"
+            },
+            "suggest": {
+                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
+                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
+                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
+                "twig/twig": "Assetic provides the integration with the Twig templating engine"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Assetic": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ],
+            "time": "2014-12-12 05:04:05"
+        },
+        {
+            "name": "michaldudek/clog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaldudek/clog.git",
+                "reference": "d9ff0223e0beec91a612700c755f476acb88f1a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaldudek/clog/zipball/d9ff0223e0beec91a612700c755f476acb88f1a1",
+                "reference": "d9ff0223e0beec91a612700c755f476acb88f1a1",
+                "shasum": ""
+            },
+            "require": {
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "psr/log": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MD\\Clog\\Tests": "tests/",
+                    "MD\\Clog": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Simple lightweight log system.",
+            "keywords": [
+                "log",
+                "logger"
+            ],
+            "time": "2014-03-29 18:09:18"
         },
         {
             "name": "michaldudek/foundation",
@@ -59,16 +305,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaldudek/Foundation.git",
-                "reference": "6bc53525a45dfe41115ca5b18b9cb25901cffc6e"
+                "reference": "b1a377cecc12688654d25b4a17cd08de4f85c4d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaldudek/Foundation/zipball/6bc53525a45dfe41115ca5b18b9cb25901cffc6e",
-                "reference": "6bc53525a45dfe41115ca5b18b9cb25901cffc6e",
+                "url": "https://api.github.com/repos/michaldudek/Foundation/zipball/b1a377cecc12688654d25b4a17cd08de4f85c4d3",
+                "reference": "b1a377cecc12688654d25b4a17cd08de4f85c4d3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.3",
+                "psr/log": ">=1.0"
             },
             "type": "library",
             "autoload": {
@@ -91,16 +338,16 @@
                     "email": "michal@michaldudek.pl"
                 }
             ],
-            "description": "A set of useful PHP functions and (mostly static) classes.",
+            "description": "A set of useful PHP classes.",
+            "homepage": "http://www.michaldudek.pl/Foundation/",
             "keywords": [
                 "array",
-                "foundation",
                 "object",
                 "string",
                 "tools",
                 "utils"
             ],
-            "time": "2013-07-31 11:57:43"
+            "time": "2014-11-13 13:40:59"
         },
         {
             "name": "michaldudek/knit",
@@ -108,16 +355,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/michaldudek/Knit.git",
-                "reference": "dd6e074634b8c34c9d6c408d009607df968b4eb4"
+                "reference": "35e6e8f6adb566aa5c6f12a02bb39df4e7f0506e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michaldudek/Knit/zipball/dd6e074634b8c34c9d6c408d009607df968b4eb4",
-                "reference": "dd6e074634b8c34c9d6c408d009607df968b4eb4",
+                "url": "https://api.github.com/repos/michaldudek/Knit/zipball/35e6e8f6adb566aa5c6f12a02bb39df4e7f0506e",
+                "reference": "35e6e8f6adb566aa5c6f12a02bb39df4e7f0506e",
                 "shasum": ""
             },
             "require": {
-                "danielmewes/php-rql": "dev-master",
                 "michaldudek/foundation": "dev-master",
                 "php": ">=5.3.3",
                 "psr/log": "1.0.*",
@@ -126,6 +372,7 @@
             "type": "library",
             "autoload": {
                 "psr-0": {
+                    "Knit\\Tests": "tests/",
                     "Knit": "src/"
                 }
             },
@@ -144,23 +391,75 @@
                 "odm",
                 "orm"
             ],
-            "time": "2013-08-20 20:28:09"
+            "time": "2014-10-05 14:34:03"
         },
         {
-            "name": "psr/log",
-            "version": "1.0.0",
+            "name": "natxet/CssMin",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-fig/log",
-                "reference": "1.0.0"
+                "url": "https://github.com/natxet/CssMin.git",
+                "reference": "8883d28cd2de131c364f2f657e4bcc09bfa45082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
-                "reference": "1.0.0",
+                "url": "https://api.github.com/repos/natxet/CssMin/zipball/8883d28cd2de131c364f2f657e4bcc09bfa45082",
+                "reference": "8883d28cd2de131c364f2f657e4bcc09bfa45082",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Scylla",
+                    "email": "joe.scylla@gmail.com",
+                    "homepage": "https://profiles.google.com/joe.scylla"
+                }
+            ],
+            "description": "Minifying CSS",
+            "homepage": "http://code.google.com/p/cssmin/",
+            "keywords": [
+                "css",
+                "minify"
+            ],
+            "time": "2014-12-05 11:02:56"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/a78d6504ff5d4367497785ab2ade91db3a9fbe11",
+                "reference": "a78d6504ff5d4367497785ab2ade91db3a9fbe11",
                 "shasum": ""
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Psr\\Log\\": ""
@@ -182,7 +481,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2014-01-18 15:33:09"
         },
         {
             "name": "splot/assets-module",
@@ -190,23 +489,36 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/AssetsModule.git",
-                "reference": "2768d26eb9ac4468e8dc5bdba90a9afb416df80f"
+                "reference": "55cc9712a65a9fb95b365a3782852292755fecdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/AssetsModule/zipball/2768d26eb9ac4468e8dc5bdba90a9afb416df80f",
-                "reference": "2768d26eb9ac4468e8dc5bdba90a9afb416df80f",
+                "url": "https://api.github.com/repos/splot/AssetsModule/zipball/55cc9712a65a9fb95b365a3782852292755fecdb",
+                "reference": "55cc9712a65a9fb95b365a3782852292755fecdb",
                 "shasum": ""
             },
             "require": {
+                "kriswallsmith/assetic": "1.2.*@dev",
                 "michaldudek/foundation": "dev-master",
+                "natxet/cssmin": "dev-master",
                 "php": ">=5.3.3",
-                "splot/framework": "dev-master",
-                "symfony/filesystem": "dev-master"
+                "splot/framework": ">=0.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "patchwork/jsqueeze": "SplotAssetsModule integrates with JSqueeze JavaScript minifier"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
+                    "Splot\\AssetsModule\\Tests": "tests/",
                     "Splot\\AssetsModule": "src/"
                 }
             },
@@ -225,10 +537,10 @@
                 "JS",
                 "assets",
                 "css",
-                "module",
-                "splot"
+                "minify",
+                "uglify"
             ],
-            "time": "2013-07-14 22:56:49"
+            "time": "2014-08-14 23:59:34"
         },
         {
             "name": "splot/cache",
@@ -276,19 +588,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/DevToolsModule.git",
-                "reference": "83c076a44ae5c4d599486462ccc4bcf97f2bc6ea"
+                "reference": "9d2ac7bb1456919898efd3a540e439f1892da5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/83c076a44ae5c4d599486462ccc4bcf97f2bc6ea",
-                "reference": "83c076a44ae5c4d599486462ccc4bcf97f2bc6ea",
+                "url": "https://api.github.com/repos/splot/DevToolsModule/zipball/9d2ac7bb1456919898efd3a540e439f1892da5ba",
+                "reference": "9d2ac7bb1456919898efd3a540e439f1892da5ba",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "splot/framework": "dev-master"
+                "splot/framework": ">=0.6"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Splot\\DevToolsModule": "src/"
@@ -310,7 +627,53 @@
                 "command",
                 "generator"
             ],
-            "time": "2013-08-19 22:27:28"
+            "time": "2014-03-22 20:33:59"
+        },
+        {
+            "name": "splot/di",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/di.git",
+                "reference": "475496345865fc0391936d93100bbe3ceac63ac6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/di/zipball/475496345865fc0391936d93100bbe3ceac63ac6",
+                "reference": "475496345865fc0391936d93100bbe3ceac63ac6",
+                "shasum": ""
+            },
+            "require": {
+                "container-interop/container-interop": "~1.0",
+                "michaldudek/foundation": ">=0.9.2",
+                "php": ">=5.3.3",
+                "symfony/yaml": ">=2.1,<3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Splot\\DependencyInjection\\Tests\\": "tests/",
+                    "Splot\\DependencyInjection\\": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Dependency Injection Container by Splot Framework.",
+            "keywords": [
+                "container",
+                "dependency",
+                "di",
+                "ioc"
+            ],
+            "time": "2014-10-11 20:53:51"
         },
         {
             "name": "splot/event-manager",
@@ -318,24 +681,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/EventManager.git",
-                "reference": "1cc64056057cd6557558b7574015e1df2c1f7394"
+                "reference": "ab82caeb530ce40fa99c5dc63ae91026973aa9c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/EventManager/zipball/1cc64056057cd6557558b7574015e1df2c1f7394",
-                "reference": "1cc64056057cd6557558b7574015e1df2c1f7394",
+                "url": "https://api.github.com/repos/splot/EventManager/zipball/ab82caeb530ce40fa99c5dc63ae91026973aa9c5",
+                "reference": "ab82caeb530ce40fa99c5dc63ae91026973aa9c5",
                 "shasum": ""
             },
             "require": {
-                "michaldudek/foundation": "dev-master",
+                "michaldudek/foundation": ">=0.9",
                 "php": ">=5.3.3",
                 "psr/log": "1.0.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Splot\\EventManager\\Tests": "tests/",
-                    "Splot\\EventManager": "src/"
+                "psr-4": {
+                    "Splot\\EventManager\\Tests\\": "tests/",
+                    "Splot\\EventManager\\": "src/"
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
@@ -353,9 +721,10 @@
                 "dispatcher",
                 "event",
                 "publisher",
+                "pubsub",
                 "subscriber"
             ],
-            "time": "2013-07-30 22:28:50"
+            "time": "2014-10-03 00:00:41"
         },
         {
             "name": "splot/framework",
@@ -363,31 +732,42 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/Framework.git",
-                "reference": "be66ff38f737bbed948a261afa20fa0462ee8446"
+                "reference": "1e077bb0e063fbbf8564cd96806b906fc133693c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/Framework/zipball/be66ff38f737bbed948a261afa20fa0462ee8446",
-                "reference": "be66ff38f737bbed948a261afa20fa0462ee8446",
+                "url": "https://api.github.com/repos/splot/Framework/zipball/1e077bb0e063fbbf8564cd96806b906fc133693c",
+                "reference": "1e077bb0e063fbbf8564cd96806b906fc133693c",
                 "shasum": ""
             },
             "require": {
-                "michaldudek/foundation": "dev-master",
+                "filp/whoops": "1.*",
+                "michaldudek/clog": "dev-master",
+                "michaldudek/foundation": ">=0.9",
                 "php": ">=5.3.3",
                 "psr/log": "1.0.*",
                 "splot/cache": "dev-master",
-                "splot/event-manager": "dev-master",
-                "splot/log": "dev-master",
-                "symfony/console": "dev-master",
-                "symfony/filesystem": "dev-master",
-                "symfony/http-foundation": "2.1.*",
-                "symfony/process": "dev-master"
+                "splot/di": ">=0.7",
+                "splot/event-manager": "1.0.*@dev",
+                "symfony/console": ">=2.1,<3.0",
+                "symfony/filesystem": ">=2.1,<3.0",
+                "symfony/http-foundation": ">=2.1,<3.0",
+                "symfony/process": ">=2.1,<3.0",
+                "symfony/yaml": ">=2.1,<3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Splot\\Framework\\Tests": "tests/",
-                    "Splot\\Framework": "src/"
+                "psr-4": {
+                    "Splot\\Framework\\Tests\\": "tests/",
+                    "Splot\\Framework\\": "src/"
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
@@ -400,13 +780,77 @@
                     "email": "michal@michaldudek.pl"
                 }
             ],
-            "description": "Splot Framework.",
+            "description": "Splot Framework. Lightweight, fully featured framework for rapid web development.",
             "keywords": [
-                "framework",
-                "php",
-                "splot"
+                "dependency injection",
+                "di",
+                "event",
+                "fast",
+                "lightweight",
+                "mvc",
+                "rapid",
+                "web"
             ],
-            "time": "2013-08-18 22:39:48"
+            "time": "2014-11-04 16:24:57"
+        },
+        {
+            "name": "splot/framework-extra-module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splot/framework-extra-module.git",
+                "reference": "53390fcf07e43b03008591db0d6680f754078520"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splot/framework-extra-module/zipball/53390fcf07e43b03008591db0d6680f754078520",
+                "reference": "53390fcf07e43b03008591db0d6680f754078520",
+                "shasum": ""
+            },
+            "require": {
+                "gregwar/image": "~2.0",
+                "michaldudek/foundation": "dev-master",
+                "php": ">=5.3.3",
+                "psr/log": "1.0.*",
+                "splot/framework": "dev-master",
+                "splot/twig-module": "dev-master",
+                "swiftmailer/swiftmailer": "5.1.*@dev"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Splot\\FrameworkExtraModule\\Tests": "tests/",
+                    "Splot\\FrameworkExtraModule": "src/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michał Dudek",
+                    "email": "michal@michaldudek.pl"
+                }
+            ],
+            "description": "Extra functionalities for Splot Framework",
+            "keywords": [
+                "ajax",
+                "databridge",
+                "filestorage",
+                "form",
+                "imaging",
+                "mailer"
+            ],
+            "time": "2014-03-23 00:49:57"
         },
         {
             "name": "splot/knit-module",
@@ -414,20 +858,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/KnitModule.git",
-                "reference": "0aa4fea04c451f047c2a4215f8e4cb9798d6ca71"
+                "reference": "da9d62c1290d02d0716eac7d47eff9266c6e0849"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/KnitModule/zipball/0aa4fea04c451f047c2a4215f8e4cb9798d6ca71",
-                "reference": "0aa4fea04c451f047c2a4215f8e4cb9798d6ca71",
+                "url": "https://api.github.com/repos/splot/KnitModule/zipball/da9d62c1290d02d0716eac7d47eff9266c6e0849",
+                "reference": "da9d62c1290d02d0716eac7d47eff9266c6e0849",
                 "shasum": ""
             },
             "require": {
+                "michaldudek/foundation": "dev-master",
                 "michaldudek/knit": "dev-master",
                 "php": ">=5.3.3",
-                "splot/framework": "dev-master"
+                "psr/log": ">=1.0",
+                "splot/framework": ">=0.6"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Splot\\KnitModule": "src/"
@@ -448,50 +899,7 @@
                 "odm",
                 "orm"
             ],
-            "time": "2013-07-11 22:37:32"
-        },
-        {
-            "name": "splot/log",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/splot/Log.git",
-                "reference": "0c2cc488ee6484809f8d4aaf9a9c2d868bb40122"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/splot/Log/zipball/0c2cc488ee6484809f8d4aaf9a9c2d868bb40122",
-                "reference": "0c2cc488ee6484809f8d4aaf9a9c2d868bb40122",
-                "shasum": ""
-            },
-            "require": {
-                "michaldudek/foundation": "dev-master",
-                "php": ">=5.3.3",
-                "psr/log": "1.0.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Splot\\Log": "src/"
-                }
-            },
-            "notification-url": "http://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michał Dudek",
-                    "email": "michal@michaldudek.pl"
-                }
-            ],
-            "description": "Log system.",
-            "keywords": [
-                "log",
-                "php",
-                "splot"
-            ],
-            "time": "2013-08-12 20:43:06"
+            "time": "2014-03-29 18:52:31"
         },
         {
             "name": "splot/twig-module",
@@ -499,24 +907,30 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/TwigModule.git",
-                "reference": "1af48f4193523d923d23a7b092b9c987fd2c35f1"
+                "reference": "5d312aa578d21b115be71808b5d2c8867b2d22ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/TwigModule/zipball/1af48f4193523d923d23a7b092b9c987fd2c35f1",
-                "reference": "1af48f4193523d923d23a7b092b9c987fd2c35f1",
+                "url": "https://api.github.com/repos/splot/TwigModule/zipball/5d312aa578d21b115be71808b5d2c8867b2d22ab",
+                "reference": "5d312aa578d21b115be71808b5d2c8867b2d22ab",
                 "shasum": ""
             },
             "require": {
-                "michaldudek/foundation": "dev-master",
+                "michaldudek/foundation": ">=0.9",
                 "php": ">=5.3.3",
-                "splot/framework": "dev-master",
+                "splot/framework": ">=0.8.2",
                 "twig/twig": "1.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Splot\\TwigModule": "src/"
+                "psr-4": {
+                    "Splot\\TwigModule\\Tests\\": "tests/",
+                    "Splot\\TwigModule\\": "src/"
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
@@ -536,7 +950,7 @@
                 "templating",
                 "twig"
             ],
-            "time": "2013-08-20 20:58:28"
+            "time": "2014-10-11 17:34:30"
         },
         {
             "name": "splot/weblog-module",
@@ -544,24 +958,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/splot/WebLogModule.git",
-                "reference": "b7084e3e430746607a927537b4d1c0d89554d68f"
+                "reference": "e0aca94ed4efd4a19342c394d4605a663fbc75d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/splot/WebLogModule/zipball/b7084e3e430746607a927537b4d1c0d89554d68f",
-                "reference": "b7084e3e430746607a927537b4d1c0d89554d68f",
+                "url": "https://api.github.com/repos/splot/WebLogModule/zipball/e0aca94ed4efd4a19342c394d4605a663fbc75d9",
+                "reference": "e0aca94ed4efd4a19342c394d4605a663fbc75d9",
                 "shasum": ""
             },
             "require": {
-                "michaldudek/foundation": "dev-master",
+                "michaldudek/clog": "dev-master",
+                "michaldudek/foundation": ">=0.9",
                 "php": ">=5.3.3",
-                "splot/framework": "dev-master",
-                "splot/log": "dev-master"
+                "psr/log": "1.0.*",
+                "splot/framework": ">=0.8"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8.x-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "Splot\\WebLogModule": "src/"
+                "psr-4": {
+                    "Splot\\WebLogModule\\Tests\\": "tests/",
+                    "Splot\\WebLogModule\\": "src/"
                 }
             },
             "notification-url": "http://packagist.org/downloads/",
@@ -582,36 +1003,91 @@
                 "tools",
                 "utils"
             ],
-            "time": "2013-07-01 22:34:45"
+            "time": "2014-10-04 00:47:19"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "748c01c1144713ac0118396935d10b6ceec91b68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/748c01c1144713ac0118396935d10b6ceec91b68",
+                "reference": "748c01c1144713ac0118396935d10b6ceec91b68",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ],
+            "time": "2014-03-18 09:03:27"
         },
         {
             "name": "symfony/console",
-            "version": "dev-master",
+            "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "2b252b1f6b30c29410772eaddf1c567a9f2bc1ab"
+                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/2b252b1f6b30c29410772eaddf1c567a9f2bc1ab",
-                "reference": "2b252b1f6b30c29410772eaddf1c567a9f2bc1ab",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/edd4b2ff8c3b4eab7b1063d234be6104c7353947",
+                "reference": "edd4b2ff8c3b4eab7b1063d234be6104c7353947",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "symfony/event-dispatcher": "~2.1"
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/process": "~2.1"
             },
             "suggest": {
-                "symfony/event-dispatcher": ""
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
@@ -625,31 +1101,31 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-17 16:34:58"
+            "time": "2014-12-12 16:23:01"
         },
         {
             "name": "symfony/filesystem",
-            "version": "dev-master",
+            "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf"
+                "reference": "1ff6caf45e7c5aac036b1536a914afbf4b8c6066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
-                "reference": "da0dcf60b7307f68667fecef8ccbb2b070bda7cf",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/1ff6caf45e7c5aac036b1536a914afbf4b8c6066",
+                "reference": "1ff6caf45e7c5aac036b1536a914afbf4b8c6066",
                 "shasum": ""
             },
             "require": {
@@ -658,7 +1134,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
@@ -672,42 +1148,52 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-09 07:26:54"
+            "time": "2014-12-12 16:23:01"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "2.1.x-dev",
+            "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation.git",
-                "reference": "79fd1ab0b85e782d342e83799b39b729fd1a30ee"
+                "reference": "af0647ebde5bc78b20581b50367c93b3472518ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/79fd1ab0b85e782d342e83799b39b729fd1a30ee",
-                "reference": "79fd1ab0b85e782d342e83799b39b729fd1a30ee",
+                "url": "https://api.github.com/repos/symfony/HttpFoundation/zipball/af0647ebde5bc78b20581b50367c93b3472518ca",
+                "reference": "af0647ebde5bc78b20581b50367c93b3472518ca",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
+            "require-dev": {
+                "symfony/expression-language": "~2.4"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\HttpFoundation": "",
-                    "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
-                }
+                    "Symfony\\Component\\HttpFoundation\\": ""
+                },
+                "classmap": [
+                    "Symfony/Component/HttpFoundation/Resources/stubs"
+                ]
             },
             "notification-url": "http://packagist.org/downloads/",
             "license": [
@@ -715,31 +1201,31 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-07 13:58:42"
+            "time": "2014-12-13 08:38:56"
         },
         {
             "name": "symfony/process",
-            "version": "dev-master",
+            "version": "2.7.x-dev",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "f82c7aac2cccdb0b90a4066a2eef3fd40533e466"
+                "reference": "e48a06acc112f2b76d6e5ac7e7eaa01a9305d146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/f82c7aac2cccdb0b90a4066a2eef3fd40533e466",
-                "reference": "f82c7aac2cccdb0b90a4066a2eef3fd40533e466",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/e48a06acc112f2b76d6e5ac7e7eaa01a9305d146",
+                "reference": "e48a06acc112f2b76d6e5ac7e7eaa01a9305d146",
                 "shasum": ""
             },
             "require": {
@@ -748,7 +1234,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
@@ -762,30 +1248,77 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-08-21 07:59:24"
+            "time": "2014-12-12 16:23:01"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "2.7.x-dev",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b9c19ce1bd9a51d3f42665973088f2e2b82db240",
+                "reference": "b9c19ce1bd9a51d3f42665973088f2e2b82db240",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-09 17:32:32"
         },
         {
             "name": "twig/twig",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11"
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "a1b847b3a3c835a495329b0ada8f3ec68a90fc9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
-                "reference": "fcf007e9a2e6c65594360ae7fa3c410ae8d56a11",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a1b847b3a3c835a495329b0ada8f3ec68a90fc9d",
+                "reference": "a1b847b3a3c835a495329b0ada8f3ec68a90fc9d",
                 "shasum": ""
             },
             "require": {
@@ -794,7 +1327,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -809,11 +1342,19 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com"
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -821,28 +1362,22 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-08-07 12:53:34"
+            "time": "2014-12-05 13:47:49"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "splot/framework": 20,
+        "splot/framework-extra-module": 20,
         "splot/assets-module": 20,
-        "splot/devtools-module": 20,
-        "splot/twig-module": 20,
         "splot/knit-module": 20,
-        "splot/weblog-module": 20
+        "splot/devtools-module": 20
     },
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.4.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }
