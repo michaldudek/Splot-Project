@@ -28,4 +28,10 @@ class Application extends AbstractApplication
         return $modules;
     }
 
+    public function loadParameters() {
+        $this->container->setParameter('config_dir', '%root_dir%config'. DS);
+        $this->container->setParameter('log_error_file', '%root_dir%log'. DS .'error.log');
+        return parent::loadParameters();
+    }
+
 }

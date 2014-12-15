@@ -2,8 +2,18 @@
 
 return array(
 
+    'log_file' => '%log_dir%focusson.log',
+    'log_error_file' => '%log_dir%error.log',
+    'log_threshold' => 'info',
+
+    'timezone' => 'Europe/Warsaw',
+
     'debugger' => array(
         'enabled' => false
+    ),
+
+    'router' => array(
+        'host' => null
     ),
 
     'cache' => array(
@@ -15,11 +25,10 @@ return array(
     'SplotKnitModule' => array(
         'stores' => array(
             'default' => array(
-                'username' => 'username-changeme',
-                'password' => 'password-changeme',
+                'class' => 'Knit\\Store\\MongoDBStore',
                 'database' => 'database-changeme'
             )
         )
-    )
+    ),
     
 );
