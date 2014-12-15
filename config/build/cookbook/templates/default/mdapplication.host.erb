@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerName <%= @params[:host] %>
+    ServerAlias *.<%= @params[:host] %>
+
+    DocumentRoot <%= @params[:docroot] %>
+
+    <Directory <%= @params[:docroot] %>>
+        Options -Indexes FollowSymLinks -MultiViews
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+    LogLevel info
+    ErrorLog <%= @params[:logdir] %>/apache_error.log
+    CustomLog <%= @params[:logdir] %>/apache_access.log combined
+</VirtualHost>

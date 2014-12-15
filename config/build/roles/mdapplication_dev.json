@@ -1,0 +1,43 @@
+{
+  "name": "mdapplication_dev",
+  "description": "MDApplication Dev VM configuration & installation recipes",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[chef-hat::base]",
+    "recipe[apache2]",
+    "recipe[apache2::mod_ssl]",
+    "recipe[apache2::mod_php5]",
+    "recipe[mongodb::10gen_repo]",
+    "recipe[mongodb::default]",
+    "recipe[redisio]",
+    "recipe[redisio::enable]",
+    "recipe[memcached]",
+    "recipe[node]",
+    "recipe[jolicode-php]",
+    "recipe[jolicode-php::php]",
+    "recipe[jolicode-php::composer]",
+    "recipe[jolicode-php::ext-apc]",
+    "recipe[jolicode-php::ext-curl]",
+    "recipe[jolicode-php::ext-gd]",
+    "recipe[jolicode-php::ext-imagick]",
+    "recipe[jolicode-php::ext-intl]",
+    "recipe[jolicode-php::ext-mbstring]",
+    "recipe[jolicode-php::ext-mcrypt]",
+    "recipe[jolicode-php::ext-pdo]",
+    "recipe[jolicode-php::ext-xdebug]",
+    "recipe[chef-hat::php-base]",
+    "recipe[chef-hat::php-fix_apc]",
+    "recipe[chef-hat::php-fix_xdebug]",
+    "recipe[chef-hat::php-mongo]",
+    "recipe[chef-hat::php-redis]",
+    "recipe[chef-hat::php-phpunit]",
+    "recipe[mdapplication::apache]"
+  ],
+  "env_run_lists": {
+  }
+}
