@@ -1,0 +1,22 @@
+{
+  "name": "jquery-appendix",
+  "main": "jquery.appendix.min.js",
+  "ignore": [
+    "**/.*",
+    "bundy.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "https://github.com/michaldudek/jQuery-Appendix",
+  "_release": "dc173ad529",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "dc173ad529036b80ed025dabfcaf349c6f50fdce"
+  },
+  "_source": "git://github.com/michaldudek/jQuery-Appendix.git",
+  "_target": "*",
+  "_originalSource": "jquery-appendix"
+}
