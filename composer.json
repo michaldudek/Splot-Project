@@ -20,7 +20,7 @@
         "splot/framework": "0.8.*@dev",
         "splot/framework-extra-module": "dev-master",
         "splot/assets-module": "dev-master",
-        "splot/twig-module": ">=0.8",
+        "splot/twig-module": ">=0.9",
         "splot/knit-module": "dev-master",
         "splot/devtools-module": "dev-master",
         "splot/weblog-module": ">=0.8"
