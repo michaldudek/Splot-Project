@@ -1,0 +1,14 @@
+log_file: %log_dir%app.log
+log_error_file: %log_dir%error.log
+log_threshold: info
+
+timezone: Europe/Warsaw
+
+debugger:
+    enabled: false
+
+SplotKnitModule:
+    stores:
+        default:
+            class: Knit\Store\MongoDBStore
+            database: databasechangeme
