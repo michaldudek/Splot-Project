@@ -26,9 +26,9 @@ class Index extends AbstractController
      */
     protected static $_methods = array(
         'get' => 'index',
-        'post' => 'index',
-        'put' => 'index',
-        'delete' => 'index'
+        'post' => false,
+        'put' => false,
+        'delete' => false
     );
 
     /**
