@@ -1,11 +1,10 @@
 (function(ng, window, document, undefined) {
     'use strict';
 
-    angular.module('FocussonApp', [
+    ng.module('App', [
         'ngAnimate',
         'ui.router',
-        'pasvaz.bindonce',
-        'jmdobry.angular-cache'
+        'pasvaz.bindonce'
     ])
         .config(['$logProvider', '$httpProvider', '$locationProvider',
             function($logProvider, $httpProvider, $locationProvider) {

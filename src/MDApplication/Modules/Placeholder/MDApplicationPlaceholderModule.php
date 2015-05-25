@@ -25,7 +25,7 @@ class MDApplicationPlaceholderModule extends AbstractModule
      * 
      * @return array
      */
-    public function loadModules() {
+    public function loadModules($env, $debug) {
         return array();
     }
 

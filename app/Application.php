@@ -8,7 +8,7 @@ class Application extends AbstractApplication
     protected $name = 'MDApplication';
     protected $version = '0.0.0-dev';
 
-    public function loadModules() {
+    public function loadModules($env, $debug) {
         $modules = array(
             new Splot\FrameworkExtraModule\SplotFrameworkExtraModule(),
             new Splot\KnitModule\SplotKnitModule(),
@@ -18,7 +18,7 @@ class Application extends AbstractApplication
             new MDApplication\Modules\Placeholder\MDApplicationPlaceholderModule()
         );
 
-        if ($this->container->getParameter('debug') || $this->container->getParameter('mode') === Framework::MODE_CONSOLE) {
+        if ($debug) {
             $modules = array_merge($modules, array(
                 new Splot\DevToolsModule\SplotDevToolsModule(),
                 new Splot\WebLogModule\SplotWebLogModule()
@@ -28,10 +28,11 @@ class Application extends AbstractApplication
         return $modules;
     }
 
-    public function loadParameters() {
-        $this->container->setParameter('config_dir', '%root_dir%config'. DS);
-        $this->container->setParameter('log_error_file', '%root_dir%log'. DS .'error.log');
-        return parent::loadParameters();
+    public function loadParameters($env, $debug) {
+        return array(
+            'config_dir' => '%root_dir%/config',
+            'log_error_file' => '%root_dir%/log/error.log'
+        );
     }
 
 }

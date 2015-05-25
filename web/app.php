@@ -1,9 +1,7 @@
 <?php
 use Splot\Framework\Framework;
 
-$rootDir = dirname(__FILE__) .'/..';
+require_once __DIR__ .'/../vendor/autoload.php';
+require_once __DIR__ .'/../app/Application.php';
 
-require_once $rootDir .'/vendor/autoload.php';
-require_once $rootDir .'/app/Application.php';
-
-Framework::run(new Application());
+Framework::run(new Application(), 'prod', false);
