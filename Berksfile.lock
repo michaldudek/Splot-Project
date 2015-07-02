@@ -3,8 +3,8 @@ DEPENDENCIES
   apt (~> 2.7.0)
   chef-hat
     git: https://github.com/michaldudek/chef-hat.git
-    revision: e05a507b3343bb7d94b49ba2994b00971e62bf91
-    tag: 0.3.2
+    revision: e520f22be08b3e9191af19f22fea598e9539952b
+    tag: 0.3.3
   memcached (~> 1.7.2)
   mongodb (~> 0.16.2)
   mysql (< 6.0.0)
@@ -20,7 +20,7 @@ GRAPH
     7-zip (>= 0.0.0)
     windows (>= 0.0.0)
   build-essential (2.2.3)
-  chef-hat (0.3.2)
+  chef-hat (0.3.3)
     apache2 (>= 0.0.0)
     apt (>= 0.0.0)
     git (>= 0.0.0)
