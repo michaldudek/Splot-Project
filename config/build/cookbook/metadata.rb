@@ -1,5 +1,0 @@
-name             "mdapplication"
-maintainer       "Michal Palys-Dudek"
-maintainer_email "michal@michaldudek.pl"
-description      "Chef Cookbook containing recipes to setup base MDApplication."
-version          "0.1.0"

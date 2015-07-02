@@ -1,18 +1,16 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+APP_NAME = "changeme"
 
 Vagrant.configure("2") do |config|
-    # install debian
-    config.vm.box = "debian7.2"
-    config.vm.box_url = "https://s3-eu-west-1.amazonaws.com/ffuenf-vagrant-boxes/debian/debian-7.2.0-amd64.box"
+    # install ubuntu
+    config.vm.box = "chef/ubuntu-14.04"
 
     # configure network
-    config.vm.hostname = 'mdapplication.dev'
-    config.vm.network "private_network", ip: "192.168.200.10", network: "255.255.0.0"
+    config.vm.hostname = APP_NAME + ".dev"
+    config.vm.network "private_network", ip: "192.168.222.10", network: "255.255.0.0"
 
     # VirtualBox specific config - eg. composer memory problem
     config.vm.provider :virtualbox do |vb, override|
-        override.vm.synced_folder ".", "/var/www/mdapplication", :nfs => true
+        override.vm.synced_folder ".", "/var/www/" + APP_NAME, :nfs => true
         vb.customize ["modifyvm", :id, "--rtcuseutc", "on"]
         vb.customize ["modifyvm", :id, "--memory", 1024]
         vb.customize ["modifyvm", :id, "--cpus", 1]
@@ -24,58 +22,70 @@ Vagrant.configure("2") do |config|
     config.hostmanager.ignore_private_ip = false
     config.hostmanager.include_offline = true
     config.hostmanager.aliases = [
-        "www.mdapplication.dev"
+        "www." + APP_NAME + ".dev"
     ]
 
     # fixed chef version to be sure that recipes are working
-    config.omnibus.chef_version = "11.10.0"
+    config.omnibus.chef_version = "latest"
 
     # enable caching in host machine
     config.cache.auto_detect = true
     config.cache.enable :apt
     config.cache.enable :chef
-    config.cache.scope = :machine
+    config.cache.scope = "machine"
 
     # chef recipes
     config.berkshelf.enabled = true
 
     config.vm.provision "chef_solo" do |chef|
-        chef.roles_path = "./config/build/roles"
-        chef.add_role "mdapplication_dev"
+        chef.run_list = [
+            "recipe[apt]",
+            "recipe[chef-hat::base]",
+            "recipe[apache2]",
+            "recipe[memcached]",
+            "recipe[mongodb::10gen_repo]",
+            "recipe[mongodb]",
+            "recipe[mysql::server]",
+            "recipe[nodejs]",
+            "recipe[redisio]",
+            "recipe[redisio::enable]",
+            "recipe[chef-hat::php]",
+            "recipe[chef-hat::php-apache2]",
+            "recipe[chef-hat::php-composer]",
+            "recipe[chef-hat::php-mongo]",
+            "recipe[chef-hat::php-redis]",
+            "recipe[chef-hat::php-xdebug]",
+            "recipe[chef-hat::vhosts]"
+        ]
         chef.json = {
+            "fqdn" => APP_NAME + ".dev",
             "apache" => {
-                "log_dir" => "/var/log/apache2"
+                # apache should run as vagrant:vagrant in Vagrant with NFS synced dirs, due to dir permissions
+                "user" => "vagrant",
+                "group" => "vagrant"
             },
-            "node" => {
-                "revision" => "v0.10.26",
-                "packages" => ["uglify-js"]
+            "mysql" => {
+                "server_root_password" => "vagrant",
+                "server_repl_password" => "vagrant",
+                "server_debian_password" => "vagrant"
             },
-            "jolicode-php" => {
-                "ext_dir" => "/usr/lib/php5/20100525",
+            "nodejs" => {
+                "npm_packages" => [
+                    {"name" => "gulp"},
+                    {"name" => "uglify-js"}
+                ]
+            },
+            "php" => {
                 "config" => {
-                    "max_execution_time" => "30",
-                    "upload_max_filesize" => "512M",
-                    "memory_limit" => "128M",
-                    "post_max_size" => "512M",
-                    "date.timezone" => "Europe/Warsaw",
-                    "html_errors" => "Off"
-                },
-                "xdebug" => {}
+                    "date.timezone" => "Europe/Warsaw"
+                }
             },
-            "redisio" => {
-                "mirror" => "http://download.redis.io/releases",
-                "version" => "2.8.3"
-            },
-            "application" => {
-                "hosts" => {
-                    "app" => {
-                        "name" => "mdapplication",
-                        "host" => "mdapplication.dev",
-                        "vhost" => "mdapplication.host.erb",
-                        "root_dir" => "/var/www/mdapplication",
-                        "logdir" => "logs",
-                        "docroot" => "web"
-                    }
+            "vhosts" => {
+                "100-" + APP_NAME => {
+                    "host" => APP_NAME + ".dev",
+                    "root_dir" => "/var/www/" + APP_NAME,
+                    "log_dir" => "logs",
+                    "doc_root" => "web"
                 }
             }
         }
