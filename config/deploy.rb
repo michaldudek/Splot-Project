@@ -1,9 +1,9 @@
 # config valid only for Capistrano 3.1+
 lock '>3.1'
 
-set :application, 'mdapplication'
+set :application, 'changeme'
 set :scm, :git
-set :repo_url, 'git@github.com:michaldudek/splot-project.git'
+set :repo_url, 'changeme'
 set :user, "www-data"
 
 set :stages, ["dev", "prod"]
@@ -37,7 +37,7 @@ namespace :deploy do
         # if it's first deployment then current path doesn't exist
         if !current_path.nil? && !current_path.to_s.empty?
           within current_path do
-            execute "cd '#{current_path}'; php app/console workqueue:workers:stop"
+            execute "cd '#{current_path}'; php app/console workqueue:workers:stop --env=prod"
           end
         end
       end
@@ -46,49 +46,24 @@ namespace :deploy do
     task :workers_start do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; nohup php app/console workqueue:workers:load > /dev/null 2>&1 &"
+          execute "cd '#{release_path}'; nohup php app/console workqueue:workers:load --env=prod > /dev/null 2>&1 &"
           #pty false
         end
       end
     end
 
-    task :node_stop do
-        on roles(:web) do
-            test "cd '#{current_path}/src_node'; forever stop panel.js"
-        end
-    end
-
-    task :node_start do
-        on roles(:web) do
-            execute "cd '#{release_path}/src_node'; forever start panel.js"
-        end
-    end
-
     task :composer do
         on roles(:web) do
-          # if it's first deployment then current path doesn't exist
-          if !current_path.nil? && !current_path.to_s.empty?
-            within current_path do
-              execute "cd #{current_path}; cp -r vendor #{release_path}"
-            end
-          end
-
           within release_path do
-            execute "cd '#{release_path}'; composer install --no-interaction --optimize-autoloader"
+            execute "cd '#{release_path}'; composer install --no-interaction --no-dev --optimize-autoloader --prefer-dist"
           end
-        end
-    end
-
-    task :npm do
-        on roles(:web) do
-            execute "cd '#{release_path}/src_node'; npm install --production"
         end
     end
 
     task :assets do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; php app/console assets:install"
+          execute "cd '#{release_path}'; php app/console assets:install --env=prod"
         end
       end
     end
@@ -96,7 +71,7 @@ namespace :deploy do
     task :appcache do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; php app/console cache:clear"
+          execute "cd '#{release_path}'; php app/console cache:clear --env=prod"
         end
       end
     end
@@ -112,7 +87,7 @@ namespace :deploy do
     task :entity_indexes do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; php app/console knit:indexes:ensure"
+          execute "cd '#{release_path}'; php app/console knit:indexes:ensure --env=prod"
         end
       end
     end
@@ -122,9 +97,6 @@ namespace :deploy do
     before :publishing, :appcache
     before :publishing, :filecache
     before :publishing, :assets
-    #before :publishing, :npm
-    #before :publishing, :node_stop
-    #after :publishing, :node_start
     #after :publishing, :workers_start
     after :publishing, :entity_indexes
 end
