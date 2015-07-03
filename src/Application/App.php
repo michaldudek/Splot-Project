@@ -57,7 +57,7 @@ class App extends AbstractApplication
         $this->container->setParameter('log_error_file', $config->get('log_error_file'));
     }
 
-    protected function getRootDir()
+    public function getRootDir()
     {
         return realpath(__DIR__ .'/../../');
     }

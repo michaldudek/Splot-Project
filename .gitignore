@@ -9,6 +9,7 @@ web/modulesapp
 # config files
 
 config/parameters.yml
+phpunit.xml
 
 # app artifacts
 
@@ -24,6 +25,7 @@ vendor/
 
 .cookbooks
 .vagrant
+resources/coverage
 *.sublime-project
 *.sublime-workspace
 codekit-config.json
