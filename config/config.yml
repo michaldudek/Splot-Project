@@ -1,11 +1,8 @@
-log_file: %log_dir%app.log
-log_error_file: %log_dir%error.log
-log_threshold: info
+log_file: %root_dir%/logs/%env%.log
+log_level: info
 
-timezone: Europe/Warsaw
-
-debugger:
-    enabled: false
+cache:
+    enabled: true
 
 SplotKnitModule:
     stores:

@@ -1,6 +1,5 @@
 # splot application files
 
-app/tests/coverage
 web/_min
 web/application
 web/filestorage
@@ -13,7 +12,7 @@ config/parameters.yml
 
 # app artifacts
 
-app/cache/
+.cache/
 logs/
 
 # 3rd party code

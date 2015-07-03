@@ -1,7 +1,7 @@
 <?php
-use Splot\Framework\Framework;
-
 require_once __DIR__ .'/../vendor/autoload.php';
-require_once __DIR__ .'/../app/Application.php';
 
-Framework::run(new Application(), 'prod', false);
+use Splot\Framework\Framework;
+use Application\App;
+
+Framework::run(new App(), 'prod', true);
