@@ -2,21 +2,20 @@
     "name": "application",
     "version": "0.0.0",
     "dependencies": {
-        "q": "~0.9",
-        "jquery": "~2.0",
+        "q": "~1.0",
+        "jquery": "~2.1",
         "jquery-appendix": "*",
         "jquery-autosize": "*",
         "bootstrap": "~3.3.*",
-        "angular": "~1.3",
-        "angular-animate": "~1.3",
+        "angular": "~1.4",
+        "angular-animate": "~1.4",
         "angular-bindonce": "0.3.*",
-        "angular-cache": "2.*",
-        "angular-cookies": "~1.3",
+        "angular-cookies": "~1.4",
         "angular-ui-router": "0.2.*",
-        "angular-strap": "~2.0",
-        "lodash": "~2.4",
-        "font-awesome": "~4.2",
-        "blueimp-file-upload": "9.5.*"
+        "angular-strap": "~2.2",
+        "lodash": "~3.10",
+        "font-awesome": "~4.3",
+        "blueimp-file-upload": "9.10.*"
     },
     "devDependencies": {}
 }

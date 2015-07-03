@@ -7,6 +7,7 @@ angular.module('mgcrea.ngStrap.aside', ['mgcrea.ngStrap.modal'])
     var defaults = this.defaults = {
       animation: 'am-fade-and-slide-right',
       prefixClass: 'aside',
+      prefixEvent: 'aside',
       placement: 'right',
       template: 'aside/aside.tpl.html',
       contentTemplate: false,
@@ -53,6 +54,13 @@ angular.module('mgcrea.ngStrap.aside', ['mgcrea.ngStrap.modal'])
           if(angular.isDefined(attr[key])) options[key] = attr[key];
         });
 
+        // use string regex match boolean attr falsy values, leave truthy values be
+        var falseValueRegExp = /^(false|0|)$/i;
+        angular.forEach(['backdrop', 'keyboard', 'html', 'container'], function(key) {
+          if(angular.isDefined(attr[key]) && falseValueRegExp.test(attr[key]))
+            options[key] = false;
+        });
+
         // Support scope as data-attrs
         angular.forEach(['title', 'content'], function(key) {
           attr[key] && attr.$observe(key, function(newValue, oldValue) {
@@ -77,7 +85,7 @@ angular.module('mgcrea.ngStrap.aside', ['mgcrea.ngStrap.modal'])
 
         // Garbage collection
         scope.$on('$destroy', function() {
-          aside.destroy();
+          if (aside) aside.destroy();
           options = null;
           aside = null;
         });
