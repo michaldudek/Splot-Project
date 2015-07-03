@@ -1,5 +1,5 @@
 <?php
-namespace Test\Application;
+namespace Tests\Application;
 
 use Application\App;
 
