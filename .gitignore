@@ -1,17 +1,27 @@
-app/cache/
-app/config/config.*.php
-app/logs/
-app/Resources/public/components/*
+# splot application files
+
 app/tests/coverage
-config/parameters.yml
-logs/
-node_modules/
 web/_min
 web/application
 web/filestorage
 web/modules
 web/modulesapp
+
+# config files
+
+config/parameters.yml
+
+# app artifacts
+
+app/cache/
+logs/
+
+# 3rd party code
+
+node_modules/
 vendor/
+
+# other artifacts
 
 .cookbooks
 .vagrant
