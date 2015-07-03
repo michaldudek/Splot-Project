@@ -77,6 +77,7 @@ Vagrant.configure("2") do |config|
             },
             "php" => {
                 "config" => {
+                    "display_errors" => "On",
                     "date.timezone" => "Europe/Warsaw"
                 }
             },
