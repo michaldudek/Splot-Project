@@ -37,7 +37,8 @@ class App extends AbstractApplication
         return [
             'root_dir' => $this->getRootDir(),
             'config_dir' => '%root_dir%/config',
-            'cache_dir' => '%root_dir%/.cache'
+            'cache_dir' => '%root_dir%/.cache',
+            'log_dir' => '%root_dir%/logs'
         ];
     }
 
@@ -45,6 +46,15 @@ class App extends AbstractApplication
     {
         $containerCacheDir = $this->getRootDir() .'/.cache/'. $env .'/container';
         return new ContainerCache(new FileStore($containerCacheDir));
+    }
+
+    public function configure()
+    {
+        parent::configure();
+
+        // copy config values to the container
+        $config = $this->getConfig();
+        $this->container->setParameter('log_error_file', $config->get('log_error_file'));
     }
 
     protected function getRootDir()

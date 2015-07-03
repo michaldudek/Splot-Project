@@ -1,0 +1,17 @@
+services:
+
+    clog.writer.file:
+        class: MD\Clog\Writers\FileLogger
+        arguments:
+            - %log_file%
+            - %log_level%
+        notify:
+            - ["@clog", "addWriter", ["@"]]
+
+    clog.writer.error_file:
+        class: MD\Clog\Writers\FileLogger
+        arguments:
+            - %log_error_file%
+            - error
+        notify:
+            - ["@clog", "addWriter", ["@"]]
