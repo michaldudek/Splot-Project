@@ -1,14 +1,9 @@
 <?php
-/**
- * Module class for MDApplicationPlaceholderModule.
- * 
- * @package MDApplication
- */
-namespace MDApplication\Modules\Placeholder;
+namespace MD\Placeholder;
 
 use Splot\Framework\Modules\AbstractModule;
 
-class MDApplicationPlaceholderModule extends AbstractModule
+class MDPlaceholderModule extends AbstractModule
 {
 
     /**

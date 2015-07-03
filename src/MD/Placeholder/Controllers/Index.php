@@ -1,5 +1,5 @@
 <?php
-namespace MDApplication\Modules\Placeholder\Controllers;
+namespace MD\Placeholder\Controllers;
 
 use Splot\Framework\Controller\AbstractController;
 

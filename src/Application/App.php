@@ -19,7 +19,7 @@ class App extends AbstractApplication
             new \Splot\TwigModule\SplotTwigModule(),
             new \Splot\AssetsModule\SplotAssetsModule(),
 
-            new \MDApplication\Modules\Placeholder\MDApplicationPlaceholderModule()
+            new \MD\Placeholder\MDPlaceholderModule()
         ];
 
         if ($debug) {
