@@ -191,3 +191,9 @@ build: build_pre build_post
 
 # build the application for development
 build_dev: build_dev_pre build_dev_post
+
+# deploy the application to the production environment
+deploy:
+	@echo ""
+	@echo "Deploying the application..."
+	@cap prod deploy
