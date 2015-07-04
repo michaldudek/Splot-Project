@@ -32,71 +32,22 @@ set :linked_dirs, %w{web/filestorage}
 
 
 namespace :deploy do
-    task :workers_stop do
-      on roles(:web) do
-        # if it's first deployment then current path doesn't exist
-        if !current_path.nil? && !current_path.to_s.empty?
-          within current_path do
-            execute "cd '#{current_path}'; php app/console workqueue:workers:stop --env=prod"
-          end
-        end
-      end
-    end
-
-    task :workers_start do
+    task :pre_build do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; nohup php app/console workqueue:workers:load --env=prod > /dev/null 2>&1 &"
-          #pty false
+          execute "cd '#{release_path}'; make build_pre"
         end
       end
     end
 
-    task :composer do
-        on roles(:web) do
-          within release_path do
-            execute "cd '#{release_path}'; composer install --no-interaction --no-dev --optimize-autoloader --prefer-dist"
-          end
-        end
-    end
-
-    task :assets do
+    task :post_build do
       on roles(:web) do
         within release_path do
-          execute "cd '#{release_path}'; php app/console assets:install --env=prod"
+          execute "cd '#{release_path}'; make build_post"
         end
       end
     end
 
-    task :appcache do
-      on roles(:web) do
-        within release_path do
-          execute "cd '#{release_path}'; php app/console cache:clear --env=prod"
-        end
-      end
-    end
-
-    task :filecache do
-      on roles(:web) do
-        within release_path do
-          execute "cd '#{release_path}'; rm -rf app/cache/*"
-        end
-      end
-    end
-
-    task :entity_indexes do
-      on roles(:web) do
-        within release_path do
-          execute "cd '#{release_path}'; php app/console knit:indexes:ensure --env=prod"
-        end
-      end
-    end
-
-    #before :publishing, :workers_stop
-    before :publishing, :composer
-    before :publishing, :appcache
-    before :publishing, :filecache
-    before :publishing, :assets
-    #after :publishing, :workers_start
-    after :publishing, :entity_indexes
+    before :publishing, :pre_build
+    after :publishing, :post_build
 end

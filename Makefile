@@ -156,6 +156,12 @@ composer_dev:
 	@echo "Installing Composer dependencies for dev purposes..."
 	@composer install --no-interaction
 
+# update Composer dependencies, including development dependencies
+composer_update:
+	@echo ""
+	@echo "Updating Composer dependencies..."
+	@composer update
+
 # install NPM dependencies for production
 npm:
 	@echo ""
