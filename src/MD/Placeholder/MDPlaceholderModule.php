@@ -8,7 +8,7 @@ class MDPlaceholderModule extends AbstractModule
 
     /**
      * Prefix that will be added to all URL's from this module.
-     * 
+     *
      * @var string|null
      */
     protected $urlPrefix;
@@ -17,10 +17,11 @@ class MDPlaceholderModule extends AbstractModule
      * If the module depends on other modules then return those dependencies from this method.
      *
      * It works exactly the same as application's ::loadModules().
-     * 
+     *
      * @return array
      */
-    public function loadModules($env, $debug) {
+    public function loadModules($env, $debug)
+    {
         return array();
     }
 
@@ -32,7 +33,8 @@ class MDPlaceholderModule extends AbstractModule
      *
      * If the module contains any routes they should be registered here.
      */
-    public function configure() {
+    public function configure()
+    {
         parent::configure();
     }
 
@@ -40,8 +42,8 @@ class MDPlaceholderModule extends AbstractModule
      * This method is called on the module during the run phase. If you need you can include any logic
      * here.
      */
-    public function run() {
+    public function run()
+    {
         parent::run();
     }
-
 }
