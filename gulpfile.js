@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     less = require('gulp-less');
 
 gulp.task('less', function() {
-    return gulp.src('web/less/**/*.less')
+    return gulp.src('web/less/app.less')
         .pipe(less())
         .pipe(gulp.dest('web/css'));
 });
