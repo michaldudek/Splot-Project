@@ -1,8 +1,15 @@
 {
   "name": "application",
   "version": "0.0.1-dev",
+  "dependencies": {},
   "devDependencies": {
     "gulp": "^3.8.8",
-    "gulp-less": "^1.3.6"
+    "gulp-concat": "^2.4.3",
+    "gulp-ignore": "^1.2.1",
+    "gulp-less": "^1.3.6",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-uglify": "^1.0.2",
+    "gulp-util": "^3.0.6"
   }
 }
