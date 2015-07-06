@@ -1,10 +1,10 @@
 var gulp = require('gulp'),
     util = require('gulp-util'),
-    ignore = require('gulp-ignore'),
     less = require('gulp-less'),
     minifyCss = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
+    rev = require('gulp-rev'),
     concat = require('gulp-concat');
 
 gulp.task('less', function() {
@@ -12,6 +12,7 @@ gulp.task('less', function() {
         .pipe(sourcemaps.init())
             .pipe(less())
             .pipe(minifyCss())
+            .pipe(rev())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('web/assets'));
 });
@@ -66,6 +67,7 @@ gulp.task('js_libs', function() {
     ]).pipe(sourcemaps.init())
             .pipe(uglify().on('error', util.log))
             .pipe(concat('libs.js'))
+            .pipe(rev())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('web/assets'));
 });
@@ -75,6 +77,7 @@ gulp.task('js', function() {
         .pipe(sourcemaps.init())
             .pipe(uglify())
             .pipe(concat('app.js'))
+            .pipe(rev())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('web/assets'))
 });

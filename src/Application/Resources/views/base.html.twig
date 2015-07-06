@@ -20,19 +20,17 @@
     {% block head %}
     {% endblock %}
 
-    {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="/assets/app.css">
-    {% endblock %}
+    {{ stylesheet('/assets/app-*.css') }}
+    {{ stylesheets() }}
 </head>
 <body {% block body_attr %}{% endblock %}>
 
     {% block body %}
     {% endblock %}
 
-    {% block javascripts %}
-        <script type="text/javascript" src="/assets/libs.js"></script>
-        <script type="text/javascript" src="/assets/app.js"></script>
-    {% endblock %}
+    {{ javascript('/assets/libs-*.js') }}
+    {{ javascript('/assets/app-*.js') }}
+    {{ javascripts() }}
 
 </body>
 </html>

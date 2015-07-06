@@ -10,3 +10,9 @@ SplotKnitModule:
         default:
             class: Knit\Store\MongoDBStore
             database: databasechangeme
+
+# explicitly do not minify css or js because gulp is taking care of that
+SplotAssetsModule:
+    minifier:
+        css_enable: false
+        js_enable: false

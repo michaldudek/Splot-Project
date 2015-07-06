@@ -9,7 +9,7 @@ help:
 	@echo ""
 	@echo "Splot commands:"
 	@echo ""
-	#@echo "     make assets 		: Installs application assets"
+	@echo "     make assets 		: Installs application assets"
 	@echo "     make cache_file     : Clears file cache"
 	@echo "     make cache_app      : Clears application cache"
 	@echo "     make cache          : Clears all caches"
@@ -175,13 +175,13 @@ npm_dev:
 	@npm install
 
 # perform build tasks before switching code to live
-build_pre: composer npm cache
+build_pre: composer npm cache assets
 
 # perform build tasks after switching code to live
 build_post: optimize workers
 
 # perform build dev tasks before switching code to live
-build_dev_pre: composer_dev npm_dev cache
+build_dev_pre: composer_dev npm_dev cache assets
 
 # perform build dev tasks after switching code to live
 build_dev_post: build_post
