@@ -64,7 +64,7 @@ gulp.task('js_libs', function() {
         //'web/components/angular-strap/dist/modules/tooltip.js',
         //'web/components/angular-strap/dist/modules/tooltip.tpl.js',
     ]).pipe(sourcemaps.init())
-            .pipe(uglify().on('error', util.log()))
+            .pipe(uglify().on('error', util.log))
             .pipe(concat('libs.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('web'));
