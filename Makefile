@@ -112,8 +112,12 @@ phpmd:
 phpmd_test:
 	@./vendor/bin/phpmd tests text unusedcode,design
 
+# lint the JavaScript
+jslint:
+	@gulp js:lint
+
 # run general quality assurance on the source code
-qa: test phpcs phpmd
+qa: test phpcs phpmd jslint
 
 # run general quality assurance on the test code
 qa_test: phpcs_test phpmd_test
@@ -124,6 +128,19 @@ qa_all: qa qa_test
 ###########################
 # BUILDING AND INSTALLING
 ###########################
+
+##### building frontend assets
+
+# compiles and builds CSS
+css:
+	@gulp less
+
+# compiles and builds JavaScript
+js:
+	@gulp js-libs
+	@gulp js
+
+##### package managers
 
 # install Composer dependencies for production
 composer:
@@ -144,6 +161,8 @@ npm:
 # install NPM dependencies for development
 npm_dev:
 	@npm install
+
+##### building
 
 # perform build tasks before switching code to live
 build_pre: composer npm cache assets
