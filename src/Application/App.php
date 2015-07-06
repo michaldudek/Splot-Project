@@ -17,7 +17,6 @@ class App extends AbstractApplication
             new \Splot\FrameworkExtraModule\SplotFrameworkExtraModule(),
             new \Splot\KnitModule\SplotKnitModule(),
             new \Splot\TwigModule\SplotTwigModule(),
-            new \Splot\AssetsModule\SplotAssetsModule(),
 
             new \MD\Placeholder\MDPlaceholderModule()
         ];
