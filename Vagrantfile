@@ -94,8 +94,7 @@ Vagrant.configure("2") do |config|
             },
             "nodejs" => {
                 "npm_packages" => [
-                    {"name" => "gulp"},
-                    {"name" => "uglify-js"}
+                    {"name" => "gulp"}
                 ]
             },
             "php" => {

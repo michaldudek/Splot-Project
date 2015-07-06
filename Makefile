@@ -22,6 +22,7 @@ help:
 	@echo "     make test           : Run the PHPUnit tests"
 	@echo ""
 	@echo "     make phpcs          : Run PHP Code Sniffer to detect code style violations"
+	@echo "     make phpcs_fix      : Run PHP CBF to auto-fix code style violations"
 	@echo "     make phpmd          : Run PHP Mess Detector to detect potential risks"
 	@echo "     make jslint         : Lint the application's JavaScript"
 	@echo ""
