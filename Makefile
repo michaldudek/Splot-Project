@@ -43,14 +43,10 @@ all: help
 
 # starts defined Splot Workers
 workers_start:
-	@echo ""
-	@echo "Starting Splot Workers from the config ..."
 	#@nohup php console workqueue:workers:load --env=prod > /dev/null 2>&1 &
 
 # stops defined Splot Workers
 workers_stop:
-	@echo ""
-	@echo "Stopping Splot Workers ..."
 	#@php console workqueue:workers:stop --env=prod
 
 # restarts Splot Workers
@@ -62,14 +58,11 @@ assets:
 
 # clears known file cache
 cache_file:
-	@echo ""
 	@echo "Clearing file cache..."
 	@echo rm -rf .cache
 
 # clears app cache
 cache_app:
-	@echo ""
-	@echo "Clearing application cache..."
 	@php console cache:clear --env=prod
 
 # clears all caches
@@ -77,13 +70,10 @@ cache: cache_app cache_file
 
 # optimize knit indexes
 knit_indexes:
-	@echo ""
-	@echo "Optimizing Knit indexes..."
-
+	@php console knit:indexes:ensure --env=prod
 
 # optimize the application
 optimize: knit_indexes
-	@php console knit:indexes:ensure --env=prod
 
 ###########################
 # QUALITY ASSURANCE
@@ -91,44 +81,35 @@ optimize: knit_indexes
 
 # run the PHPUnit tests
 test:
-	@echo ""
-	@echo "Running PHPUnit tests ..."
 	@./vendor/bin/phpunit
 
 # run PHPCS on the source code and show any style violations
 phpcs:
-	@echo ""
 	@echo "Running PHP Code Sniffer on src/ ..."
 	@./vendor/bin/phpcs --standard=psr2 src
 
 # run PHPCBF to auto-fix code style violations
 phpcs_fix:
-	@echo ""
 	@echo "Fixing PHP style violations in src/ ..."
 	@./vendor/bin/phpcbf --standard=psr2 src
 
 # run PHPCS on the test code and show any style violations
 phpcs_test:
-	@echo ""
 	@echo "Running PHP Code Sniffer on tests/ ..."
 	@./vendor/bin/phpcs --standard=psr2 tests
 
 # run PHPCBF on the test code to auto-fix code style violations
 phpcs_test_fix:
-	@echo ""
 	@echo "Fixing PHP style violations in tests/ ..."
 	@./vendor/bin/phpcbf --standard=psr2 tests
 
 # Run PHP Mess Detector on the source code
 phpmd:
-	@echo ""
 	@echo "Running PHP Mess Detector on src/ ..."
 	@./vendor/bin/phpmd src text naming,codesize,unusedcode,design
 
 # run PHP Mess Detector on the test code
 phpmd_test:
-	@echo ""
-	@echo "Running PHP Code Sniffer on tests/ ..."
 	@./vendor/bin/phpmd tests text unusedcode,design
 
 # run general quality assurance on the source code
@@ -146,32 +127,22 @@ qa_all: qa qa_test
 
 # install Composer dependencies for production
 composer:
-	@echo ""
-	@echo "Installing Composer dependencies..."
 	@composer install --no-interaction --no-dev --prefer-dist --optimize-autoloader
 
 # install Composer dependencies for development
 composer_dev:
-	@echo ""
-	@echo "Installing Composer dependencies for dev purposes..."
 	@composer install --no-interaction
 
 # update Composer dependencies, including development dependencies
 composer_update:
-	@echo ""
-	@echo "Updating Composer dependencies..."
 	@composer update
 
 # install NPM dependencies for production
 npm:
-	@echo ""
-	@echo "Installing NPM dependencies..."
 	@npm install --no-dev
 
 # install NPM dependencies for development
 npm_dev:
-	@echo ""
-	@echo "Installing NPM dependencies for dev purposes..."
 	@npm install
 
 # perform build tasks before switching code to live
