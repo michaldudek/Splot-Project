@@ -6,32 +6,33 @@
 help:
 	@echo ""
 	@echo "Following commands are available:"
+	@echo "(this is a summary of the main commands, for more fine-grained commands see the Makefile itself)"
 	@echo ""
-	@echo "Splot commands:"
+	@echo "     make help           : This info"
 	@echo ""
-	@echo "     make assets 		: Installs application assets"
-	@echo "     make cache_file     : Clears file cache"
-	@echo "     make cache_app      : Clears application cache"
+	@echo "  Splot commands:"
 	@echo "     make cache          : Clears all caches"
+	@echo "     make workers        : Restarts background workers"
 	@echo ""
-	@echo "QA commands:"
-	@echo ""
+	@echo "  QA commands:"
 	@echo "     make qa             : Run quality assurance on the source code (unit tests, linters, etc)"
 	@echo "     make qa_test        : Run quality assurance on the test code (linters, etc)"
 	@echo "     make qa_all         : Run quality assurance on both the source code and the test code"
 	@echo ""
-	@echo "     make workers_start  : Starts Splot Workers defined in the app config"
-	@echo "     make workers_stop   : Stops all running Splot Workers"
-	@echo "     make workers        : Restarts all running Splot Workers and loads any not-running"
-	@echo ""
 	@echo "     make test           : Run the PHPUnit tests"
 	@echo ""
 	@echo "     make phpcs          : Run PHP Code Sniffer to detect code style violations"
-	@echo "     make phpcs_fix      : Run PHPCBF to auto-fix any style violations"
-	@echo "     make phpcs_test     : Run PHP Code Sniffer on the test code to detect code style violations"
-	@echo "     make phpcs_test_fix : Run PHPCBF on the test code to auto-fix any style violations"
 	@echo "     make phpmd          : Run PHP Mess Detector to detect potential risks"
-	@echo "     make phpmd_test     : Run PHP Mess Detector on the test code to detect potential risks"
+	@echo "     make jslint         : Lint the application's JavaScript"
+	@echo ""
+	@echo "  Build commands:"
+	@echo "     make assets         : Installs and builds frontend assets"
+	@echo "     make optimize       : Optimizes various aspects of the application"
+	@echo ""
+	@echo "     make build          : Builds the application for production"
+	@echo "     make build_dev      : Builds the application for development"
+	@echo ""
+	@echo "     make deploy         : Deploys the application"
 	@echo ""
 
 # alias for help target
@@ -53,8 +54,9 @@ workers_stop:
 workers: workers_stop workers_start
 
 # installs application assets
-assets:
+assets_install:
 	@php console assets:install
+
 
 # clears known file cache
 cache_file:
@@ -71,9 +73,6 @@ cache: cache_app cache_file
 # optimize knit indexes
 knit_indexes:
 	@php console knit:indexes:ensure --env=prod
-
-# optimize the application
-optimize: knit_indexes
 
 ###########################
 # QUALITY ASSURANCE
@@ -140,6 +139,9 @@ js:
 	@gulp js-libs
 	@gulp js
 
+# builds application assets
+assets: assets_install css js
+
 ##### package managers
 
 # install Composer dependencies for production
@@ -154,6 +156,10 @@ composer_dev:
 composer_update:
 	@composer update
 
+# optimize the composer
+composer_optimize:
+	@composer dumpautoload
+
 # install NPM dependencies for production
 npm:
 	@npm install --no-dev
@@ -163,6 +169,9 @@ npm_dev:
 	@npm install
 
 ##### building
+
+# optimize the application
+optimize: knit_indexes composer_optimize cache
 
 # perform build tasks before switching code to live
 build_pre: composer npm cache assets
