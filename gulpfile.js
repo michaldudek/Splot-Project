@@ -5,9 +5,15 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     rev = require('gulp-rev'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    clean = require('gulp-clean');
 
-gulp.task('less', function() {
+gulp.task('less:clean', function() {
+    return gulp.src('web/assets/*.css{.map,}', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('less', ['less:clean'], function() {
     return gulp.src('web/less/app.less')
         .pipe(sourcemaps.init())
             .pipe(less())
@@ -17,7 +23,12 @@ gulp.task('less', function() {
         .pipe(gulp.dest('web/assets'));
 });
 
-gulp.task('js_libs', function() {
+gulp.task('js-libs:clean', function() {
+    return gulp.src('web/assets/libs-*.js{.map,}', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('js-libs', ['js-libs:clean'], function() {
     return gulp.src([
         'web/components/lodash/lodash.js',
         
@@ -72,7 +83,12 @@ gulp.task('js_libs', function() {
         .pipe(gulp.dest('web/assets'));
 });
 
-gulp.task('js', function() {
+gulp.task('js:clean', function() {
+    return gulp.src('web/assets/app-*.js{.map,}', {read: false})
+        .pipe(clean());
+});
+
+gulp.task('js', ['js:clean'], function() {
     return gulp.src('web/js/**/*.js')
         .pipe(sourcemaps.init())
             .pipe(uglify())
@@ -87,4 +103,4 @@ gulp.task('watch', function() {
     gulp.watch('web/js/**/*.js', ['js']);
 });
 
-gulp.task('default', ['less', 'js_libs', 'js']);
+gulp.task('default', ['less', 'js-libs', 'js']);
