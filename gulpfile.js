@@ -1,9 +1,12 @@
-var gulp = require('gulp'),
+var fs = require('fs'),
+    jsonMinify = require('jsonminify'),
+    gulp = require('gulp'),
     util = require('gulp-util'),
     less = require('gulp-less'),
     minifyCss = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
+    jshint = require('gulp-jshint'),
     rev = require('gulp-rev'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean');
@@ -83,12 +86,20 @@ gulp.task('js-libs', ['js-libs:clean'], function() {
         .pipe(gulp.dest('web/assets'));
 });
 
+gulp.task('js:lint', function() {
+    var config = JSON.parse(jsonMinify(fs.readFileSync('./.jshintrc', 'utf8')));
+    config.lookup = false;
+    return gulp.src('web/js/**/*.js')
+        .pipe(jshint(config))
+        .pipe(jshint.reporter('jshint-stylish'));
+});
+
 gulp.task('js:clean', function() {
     return gulp.src('web/assets/app-*.js{.map,}', {read: false})
         .pipe(clean());
 });
 
-gulp.task('js', ['js:clean'], function() {
+gulp.task('js', ['js:lint', 'js:clean'], function() {
     return gulp.src('web/js/**/*.js')
         .pipe(sourcemaps.init())
             .pipe(uglify())
