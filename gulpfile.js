@@ -99,7 +99,7 @@ gulp.task('js:clean', function() {
         .pipe(clean());
 });
 
-gulp.task('js', ['js:lint', 'js:clean'], function() {
+gulp.task('js', ['js:clean'], function() {
     return gulp.src('web/js/**/*.js')
         .pipe(sourcemaps.init())
             .pipe(uglify())
@@ -111,7 +111,7 @@ gulp.task('js', ['js:lint', 'js:clean'], function() {
 
 gulp.task('watch', function() {
     gulp.watch('web/less/**/*.less', ['less']);
-    gulp.watch('web/js/**/*.js', ['js']);
+    gulp.watch('web/js/**/*.js', ['js:lint', 'js']);
 });
 
 gulp.task('default', ['less', 'js-libs', 'js']);
