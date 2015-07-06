@@ -13,7 +13,7 @@ gulp.task('less', function() {
             .pipe(less())
             .pipe(minifyCss())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web'));
+        .pipe(gulp.dest('web/assets'));
 });
 
 gulp.task('js_libs', function() {
@@ -67,7 +67,7 @@ gulp.task('js_libs', function() {
             .pipe(uglify().on('error', util.log))
             .pipe(concat('libs.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web'));
+        .pipe(gulp.dest('web/assets'));
 });
 
 gulp.task('js', function() {
@@ -76,7 +76,7 @@ gulp.task('js', function() {
             .pipe(uglify())
             .pipe(concat('app.js'))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web'))
+        .pipe(gulp.dest('web/assets'))
 });
 
 gulp.task('watch', function() {
