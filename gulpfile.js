@@ -1,91 +1,85 @@
+/* jshint node: true */
+'use strict';
+
 var fs = require('fs'),
     jsonMinify = require('jsonminify'),
+    _ = require('lodash'),
     gulp = require('gulp'),
-    util = require('gulp-util'),
     less = require('gulp-less'),
     minifyCss = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
+    ngAnnotate = require('gulp-ng-annotate'),
     jshint = require('gulp-jshint'),
     rev = require('gulp-rev'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean');
 
-gulp.task('less:clean', function() {
-    return gulp.src('web/assets/*.css{.map,}', {read: false})
-        .pipe(clean());
+/*
+ * CSS (LESS) TASKS
+ */
+// dynamically generate tasks for all the packages
+var cssPackages = ['lib', 'app'];
+_.forEach(cssPackages, function(name) {
+    // clean generated files
+    gulp.task('less:' + name + ':clean', function() {
+        return gulp.src('web/assets/' + name + '-*.css{.map,}', {read: false})
+            .pipe(clean());
+    });
+
+    // compile appropriate less file
+    gulp.task('less:' + name, ['less:' + name + ':clean'], function() {
+        return gulp.src('web/less/' + name + '.less')
+            .pipe(sourcemaps.init())
+                .pipe(less())
+                .pipe(minifyCss({
+                    processImport : false
+                }))
+                .pipe(rev())
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('web/assets'));
+    });
 });
 
-gulp.task('less', ['less:clean'], function() {
-    return gulp.src('web/less/app.less')
-        .pipe(sourcemaps.init())
-            .pipe(less())
-            .pipe(minifyCss())
-            .pipe(rev())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/assets'));
+// general less task that compiles all the files
+gulp.task('less', _.map(cssPackages, function(name) {
+    return 'less:' + name;
+}));
+
+/*
+ * JAVASCRIPT TASKS
+ */
+// this is a manifest of which files should go into what packages
+var jsPackages = JSON.parse(jsonMinify(fs.readFileSync('./js-build.json', 'utf8')));
+
+// dynamically generate tasks for all the packages
+_.forEach(jsPackages, function(files, name) {
+    // clean generated files
+    gulp.task('js:' + name + ':clean', function() {
+        return gulp.src('web/assets/' + name + '-*.js{.map,}', {read: false})
+            .pipe(clean());
+    });
+
+    // compile package files
+    gulp.task('js:' + name, ['js:' + name + ':clean'], function() {
+        return gulp.src(files)
+            .pipe(sourcemaps.init())
+                .pipe(ngAnnotate())
+                .pipe(uglify())
+                .pipe(concat(name + '.js'))
+                .pipe(rev())
+            .pipe(sourcemaps.write('./'))
+            .pipe(gulp.dest('web/assets'));
+    });
 });
 
-gulp.task('js-libs:clean', function() {
-    return gulp.src('web/assets/libs-*.js{.map,}', {read: false})
-        .pipe(clean());
+// general js task that compiles all the js files
+var jsTasks = _.map(_.keys(jsPackages), function(name) {
+    return 'js:' + name;
 });
+gulp.task('js', jsTasks);
 
-gulp.task('js-libs', ['js-libs:clean'], function() {
-    return gulp.src([
-        'web/components/lodash/lodash.js',
-        
-        //'web/components/q/q.js',
-        
-        'web/components/jquery/dist/jquery.js',
-        'web/components/jquery-appendix/src/jquery.appendix.js',
-        'web/components/jquery-autosize/dist/autosize.js',
-        'web/components/angular/angular.js',
-        'web/components/angular-animate/angular-animate.js',
-        'web/components/angular-bindonce/bindonce.js',
-        'web/components/angular-cookies/angular-cookies.js',
-        'web/components/angular-ui-router/release/angular-ui-router.js'
-
-        // jquery file upload - enable if you please
-        //'web/components/blueimp-file-upload/js/jquery.iframe-transport.js',
-        //'web/components/blueimp-file-upload/js/jquery.fileupload.js',
-        //'web/components/blueimp-file-upload/js/jquery.fileupload-process.js',
-        //'web/components/blueimp-file-upload/js/jquery.fileupload-validate.js',
-        //'web/components/blueimp-file-upload/js/jquery.fileupload-angular.js',
-
-        // Bootstrap - enable as needed
-        //'web/components/bootstrap/js/affix.js',
-        //'web/components/bootstrap/js/alert.js',
-        //'web/components/bootstrap/js/button.js',
-        //'web/components/bootstrap/js/carousel.js',
-        //'web/components/bootstrap/js/collapse.js',
-        //'web/components/bootstrap/js/dropdown.js',
-        //'web/components/bootstrap/js/modal.js',
-        //'web/components/bootstrap/js/popover.js',
-        //'web/components/bootstrap/js/scrollspy.js',
-        //'web/components/bootstrap/js/tab.js',
-        //'web/components/bootstrap/js/tooltip.js',
-        //'web/components/bootstrap/js/transition.js',
-
-        // Angular Strap - enable as needed
-        //'web/components/angular-strap/dist/modules/date-parser.js',
-        //'web/components/angular-strap/dist/modules/datepicker.js',
-        //'web/components/angular-strap/dist/modules/datepicker.tpl.js',
-        //'web/components/angular-strap/dist/modules/dimensions.js',
-        //'web/components/angular-strap/dist/modules/modal.js',
-        //'web/components/angular-strap/dist/modules/modal.tpl.js',
-        //'web/components/angular-strap/dist/modules/timepicker.js',
-        //'web/components/angular-strap/dist/modules/timepicker.tpl.js',
-        //'web/components/angular-strap/dist/modules/tooltip.js',
-        //'web/components/angular-strap/dist/modules/tooltip.tpl.js',
-    ]).pipe(sourcemaps.init())
-            .pipe(uglify().on('error', util.log))
-            .pipe(concat('libs.js'))
-            .pipe(rev())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/assets'));
-});
-
+// lint all the js files
 gulp.task('js:lint', function() {
     var config = JSON.parse(jsonMinify(fs.readFileSync('./.jshintrc', 'utf8')));
     config.lookup = false;
@@ -94,24 +88,30 @@ gulp.task('js:lint', function() {
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('js:clean', function() {
-    return gulp.src('web/assets/app-*.js{.map,}', {read: false})
-        .pipe(clean());
-});
-
-gulp.task('js', ['js:clean'], function() {
-    return gulp.src('web/js/**/*.js')
-        .pipe(sourcemaps.init())
-            .pipe(uglify())
-            .pipe(concat('app.js'))
-            .pipe(rev())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/assets'))
-});
-
+/*
+ * WATCHING
+ */
 gulp.task('watch', function() {
-    gulp.watch('web/less/**/*.less', ['less']);
-    gulp.watch('web/js/**/*.js', ['js:lint', 'js']);
+    // watch files from each package separately and then some
+    _.forEach(cssPackages, function(name) {
+        gulp.watch([
+            // common global includes
+            'web/less/lib/lesselements.less',
+            'web/less/_varmix.less',
+            // the package file itself
+            'web/less/' + name + '.less',
+            // the files that the package usually imports
+            'web/less/' + name + '/**/*.less'
+        ], ['less:' + name]);
+    });
+
+    // watch files from each package separately
+    _.forEach(jsPackages, function(files, name) {
+        gulp.watch(files, ['js:' + name]);
+    });
 });
 
-gulp.task('default', ['less', 'js-libs', 'js']);
+/*
+ * DEFAULT BUILD ALL
+ */
+gulp.task('default', ['less', 'js']);

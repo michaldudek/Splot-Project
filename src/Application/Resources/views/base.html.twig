@@ -20,6 +20,7 @@
     {% block head %}
     {% endblock %}
 
+    {{ stylesheet('/assets/lib-*.css') }}
     {{ stylesheet('/assets/app-*.css') }}
     {{ stylesheets() }}
 </head>
@@ -28,7 +29,7 @@
     {% block body %}
     {% endblock %}
 
-    {{ javascript('/assets/libs-*.js') }}
+    {{ javascript('/assets/lib-*.js') }}
     {{ javascript('/assets/app-*.js') }}
     {{ javascripts() }}
 
