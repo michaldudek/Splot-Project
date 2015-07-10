@@ -62,7 +62,7 @@ assets_install:
 # clears known file cache
 cache_file:
 	@echo "Clearing file cache..."
-	@echo rm -rf .cache
+	@rm -rf .cache
 
 # clears app cache
 cache_app:
