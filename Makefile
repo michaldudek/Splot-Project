@@ -1,199 +1,216 @@
-######################################################
-# This is a Makefile for a Splot Project application #
-######################################################
+# Makefile
+# 
+# Common Makefile for web projects.
+# 
+# @author		Michał Pałys-Dudek <michal@michaldudek.pl>
+# @link			TBD
+# @version		0.1.0
+# @date			06.08.2015
+# ---------------------------------------------------------------------------
+# 
+# MDSplotProject.
 
-# show all available commands
+.PHONY: help all install install_dev clear assets warmup run prepublish postpublish css js watch test lint qa report docs noop composer composer_dev workers workers_start assets assets_install cache cache_file cache_app knit_indexes phpunit phpcs phpcs_test phpcs_fix phpcs_test_fix phpmd phpmd_test jslint npm_dev
+
+# Variables
+# ---------------------------------------------------------------------------
+
+# Current path.
+CWD=`pwd`
+
+# Previous release path.
+PREVIOUS_PATH?=$(CWD)
+
+# Current (new) release path.
+CURRENT_PATH?=$(CWD)
+
+# Targets
+# ---------------------------------------------------------------------------
+
 help:
 	@echo ""
 	@echo "Following commands are available:"
-	@echo "(this is a summary of the main commands, for more fine-grained commands see the Makefile itself)"
+	@echo "(this is summary of the main commands,"
+	@echo " but for more fine-grained commands see the Makefile)"
 	@echo ""
-	@echo "     make help           : This info"
+	@echo "     make help           : This info."
 	@echo ""
-	@echo "  Splot commands:"
-	@echo "     make cache          : Clears all caches"
-	@echo "     make workers        : Restarts background workers"
+	@echo " Installation:"
+	@echo "     make install        : Installs all dependencies for production."
+	@echo "     make install_dev    : Installs all dependencies (including dev dependencies)"
+	@echo "     make clear          : Clears any build artifacts, caches, installed packages, etc."
+	@echo "     make assets         : Installs / prepares / builds the frontend assets."
+	@echo "     make warmup         : Warms up the application."
+	@echo "     make run            : Runs / restarts the application."
 	@echo ""
-	@echo "  QA commands:"
-	@echo "     make qa             : Run quality assurance on the source code (unit tests, linters, etc)"
-	@echo "     make qa_test        : Run quality assurance on the test code (linters, etc)"
-	@echo "     make qa_all         : Run quality assurance on both the source code and the test code"
+	@echo " Deployment:"
+	@echo "     make prepublish     : Runs everything that needs to be ran before publishing the app."
+	@echo "     make postpublish    : Runs everything that needs to be ran after the app has been published."
 	@echo ""
-	@echo "     make test           : Run the PHPUnit tests"
+	@echo " Development:"
+	@echo "     make css            : Build CSS."
+	@echo "     make js             : Build JavaScript."
+	@echo "     make watch          : Watch files for changes and trigger appropriate tasks on changes."
 	@echo ""
-	@echo "     make phpcs          : Run PHP Code Sniffer to detect code style violations"
-	@echo "     make phpcs_fix      : Run PHP CBF to auto-fix code style violations"
-	@echo "     make phpmd          : Run PHP Mess Detector to detect potential risks"
-	@echo "     make jslint         : Lint the application's JavaScript"
-	@echo ""
-	@echo "  Build commands:"
-	@echo "     make assets         : Installs and builds frontend assets"
-	@echo "     make optimize       : Optimizes various aspects of the application"
-	@echo ""
-	@echo "     make build          : Builds the application for production"
-	@echo "     make build_dev      : Builds the application for development"
-	@echo ""
-	@echo "     make deploy         : Deploys the application"
+	@echo " Quality Assurance:"
+	@echo "     make test           : Run tests."
+	@echo "     make lint           : Lint the code."
+	@echo "     make qa             : Run tests, linters and any other quality assurance tool."
+	@echo "     make report         : Build reports about the code / the project / the app."
+	@echo "     make docs           : Build docs."
 	@echo ""
 
-# alias for help target
+# alias for help
 all: help
 
-###########################
-# COMMON SPLOT TASKS
-###########################
+# Installation
+# ---------------------------------------------------------------------------
 
-# starts defined Splot Workers
-workers_start:
-	#@nohup php console workqueue:workers:load --env=prod > /dev/null 2>&1 &
+# Installs all dependencies for production.
+install: composer
 
-# stops defined Splot Workers
-workers_stop:
-	#@php console workqueue:workers:stop --env=prod
+# Installs all dependencies (including dev dependencies)
+install_dev: composer_dev
+
+# Clears any build artifacts, caches, installed packages, etc.
+clear: cache
+
+# Installs / prepares / builds the frontend assets.
+assets: assets_install
+
+# Warms up the application.
+warmup: knit_indexes
+
+# Runs / restarts the application.
+run: workers
+
+# Deployment
+# ---------------------------------------------------------------------------
+
+# Runs everything that needs to be ran before publishing the app.
+prepublish: noop
+
+# Runs everything that needs to be ran after the app has been published.
+postpublish: run
+
+# Development
+# ---------------------------------------------------------------------------
+
+# Build CSS.
+css:
+	@gulp less
+
+# Build JavaScript.
+js:
+	@gulp js
+
+# Watch files for changes and trigger appropriate tasks on changes.
+watch:
+	@gulp watch
+
+# Quality Assurance
+# ---------------------------------------------------------------------------
+
+# Run tests.
+test: phpunit
+
+# Lint the code.
+lint: phpcs phpcs_test phpmd phpmd_test jslint
+
+# Run tests, linters and any other quality assurance tool.
+qa: test lint
+
+# Build reports about the code / the project / the app.
+report: noop
+
+# Build docs.
+docs: noop
+
+# Misc
+# ---------------------------------------------------------------------------
+
+noop:
+	@echo "Nothing to do."
+
+# End of interface
+# ----------------
+
+# ---------------------------------------------------------------------------
+# App specific commands
+# ---------------------------------------------------------------------------
+
+# install Composer dependencies for production
+composer:
+	composer install --no-interaction --no-dev --prefer-dist --optimize-autoloader
+
+# install Composer dependencies for development
+composer_dev:
+	composer install --no-interaction --prefer-dist
+
+# install NPM dependencies for development
+npm_dev: npm
+	npm install
 
 # restarts Splot Workers
 workers: workers_stop workers_start
 
+# starts defined Splot Workers
+workers_start:
+	nohup php console workqueue:workers:load --env=prod --no-debug > /dev/null 2>&1 &
+
+# stops defined Splot Workers
+workers_stop:
+	@cd $(PREVIOUS_PATH)
+	php console workqueue:workers:stop --env=prod --no-debug
+	@cd $(CURRENT_PATH)
+
 # installs application assets
 assets_install:
-	@php console assets:install
-
+	php console assets:install --no-debug
 
 # clears known file cache
 cache_file:
-	@echo "Clearing file cache..."
-	@rm -rf .cache
+	rm -rf .cache
 
 # clears app cache
 cache_app:
-	@php console cache:clear --env=prod
+	php console cache:clear --env=prod
 
 # clears all caches
 cache: cache_app cache_file
 
 # optimize knit indexes
 knit_indexes:
-	@php console knit:indexes:ensure --env=prod
-
-###########################
-# QUALITY ASSURANCE
-###########################
+	php console knit:indexes:ensure --env=prod --no-debug
 
 # run the PHPUnit tests
-test:
-	@./vendor/bin/phpunit
+phpunit:
+	php ./vendor/bin/phpunit -c phpunit.xml.dist
 
 # run PHPCS on the source code and show any style violations
 phpcs:
-	@echo "Running PHP Code Sniffer on src/ ..."
-	@./vendor/bin/phpcs --standard=psr2 src
+	php ./vendor/bin/phpcs --standard=psr2 src
 
 # run PHPCBF to auto-fix code style violations
 phpcs_fix:
-	@echo "Fixing PHP style violations in src/ ..."
-	@./vendor/bin/phpcbf --standard=psr2 src
+	php ./vendor/bin/phpcbf --standard=psr2 src
 
 # run PHPCS on the test code and show any style violations
 phpcs_test:
-	@echo "Running PHP Code Sniffer on tests/ ..."
-	@./vendor/bin/phpcs --standard=psr2 tests
+	php ./vendor/bin/phpcs --standard=psr2 tests
 
 # run PHPCBF on the test code to auto-fix code style violations
 phpcs_test_fix:
-	@echo "Fixing PHP style violations in tests/ ..."
-	@./vendor/bin/phpcbf --standard=psr2 tests
+	php ./vendor/bin/phpcbf --standard=psr2 tests
 
 # Run PHP Mess Detector on the source code
 phpmd:
-	@echo "Running PHP Mess Detector on src/ ..."
-	@./vendor/bin/phpmd src text naming,codesize,unusedcode,design
+	php ./vendor/bin/phpmd src text naming,codesize,unusedcode,design
 
 # run PHP Mess Detector on the test code
 phpmd_test:
-	@./vendor/bin/phpmd tests text unusedcode,design
+	php ./vendor/bin/phpmd tests text unusedcode,design
 
 # lint the JavaScript
 jslint:
-	@gulp js:lint
-
-# run general quality assurance on the source code
-qa: test phpcs phpmd jslint
-
-# run general quality assurance on the test code
-qa_test: phpcs_test phpmd_test
-
-# run full quality assurance on the source code and the test code
-qa_all: qa qa_test
-
-###########################
-# BUILDING AND INSTALLING
-###########################
-
-##### building frontend assets
-
-# compiles and builds CSS
-css:
-	@gulp less
-
-# compiles and builds JavaScript
-js:
-	@gulp js-libs
-	@gulp js
-
-# builds application assets
-assets: assets_install css js
-
-##### package managers
-
-# install Composer dependencies for production
-composer:
-	@composer install --no-interaction --no-dev --prefer-dist --optimize-autoloader
-
-# install Composer dependencies for development
-composer_dev:
-	@composer install --no-interaction
-
-# update Composer dependencies, including development dependencies
-composer_update:
-	@composer update
-
-# optimize the composer
-composer_optimize:
-	@composer dumpautoload
-
-# install NPM dependencies for production
-npm:
-	@npm install --no-dev
-
-# install NPM dependencies for development
-npm_dev:
-	@npm install
-
-##### building
-
-# optimize the application
-optimize: knit_indexes composer_optimize cache
-
-# perform build tasks before switching code to live
-build_pre: composer npm cache assets
-
-# perform build tasks after switching code to live
-build_post: optimize workers
-
-# perform build dev tasks before switching code to live
-build_dev_pre: composer_dev npm_dev cache assets
-
-# perform build dev tasks after switching code to live
-build_dev_post: build_post
-
-# build the application for production
-build: build_pre build_post
-
-# build the application for development
-build_dev: build_dev_pre build_dev_post
-
-# deploy the application to the production environment
-deploy:
-	@echo ""
-	@echo "Deploying the application..."
-	@cap prod deploy
+	gulp js:lint
