@@ -32,22 +32,22 @@ set :linked_dirs, %w{web/filestorage}
 
 
 namespace :deploy do
-    task :pre_build do
-      on roles(:web) do
-        within release_path do
-          execute "cd '#{release_path}'; make build_pre"
+    task :prepublish do
+        on roles(:web) do
+            within release_path do
+                execute "CURRENT_PATH='#{release_path}' PREVIOUS_PATH='#{current_path}' make prepublish"
+            end
         end
-      end
     end
 
-    task :post_build do
-      on roles(:web) do
-        within release_path do
-          execute "cd '#{release_path}'; make build_post"
+    task :postpublish do
+        on roles(:web) do
+            within release_path do
+                execute "CURRENT_PATH='#{release_path}' PREVIOUS_PATH='#{current_path}' make postpublish"
+            end
         end
-      end
     end
 
-    before :publishing, :pre_build
-    after :publishing, :post_build
+    before :publishing, :prepublish
+    after :publishing, :postpublish
 end
