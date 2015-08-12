@@ -49,13 +49,13 @@ Vagrant.configure("2") do |config|
     ]
 
     # fixed chef version to be sure that recipes are working
-    config.omnibus.chef_version = "latest"
+    config.omnibus.chef_version = :latest
 
     # enable caching in host machine
     config.cache.auto_detect = true
     config.cache.enable :apt
     config.cache.enable :chef
-    config.cache.scope = "machine"
+    config.cache.scope = :machine
 
     # chef recipes
     config.berkshelf.enabled = true
