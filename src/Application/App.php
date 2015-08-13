@@ -5,12 +5,36 @@ use Splot\Cache\Store\FileStore;
 use Splot\Framework\Application\AbstractApplication;
 use Splot\Framework\DependencyInjection\ContainerCache;
 
+/**
+ * Application class.
+ *
+ * @author Michał Pałys-Dudek <michal@michaldudek.pl>
+ */
 class App extends AbstractApplication
 {
 
+    /**
+     * Application name.
+     *
+     * @var string
+     */
     protected $name = 'Application';
+
+    /**
+     * Application version.
+     *
+     * @var string
+     */
     protected $version = '0.0.0-dev';
 
+    /**
+     * What modules should be loaded for this application?
+     *
+     * @param string $env Env in which the app is ran.
+     * @param boolean $debug Is debug on?
+     *
+     * @return array
+     */
     public function loadModules($env, $debug)
     {
         $modules = [
@@ -18,20 +42,31 @@ class App extends AbstractApplication
             new \Splot\KnitModule\SplotKnitModule(),
             new \Splot\TwigModule\SplotTwigModule(),
             new \Splot\AssetsModule\SplotAssetsModule(),
+            new \Splot\DevToolsModule\SplotDevToolsModule(),
 
             new \MD\Placeholder\MDPlaceholderModule()
         ];
 
         if ($debug) {
-            $modules = array_merge($modules, [
-                new \Splot\DevToolsModule\SplotDevToolsModule(),
-                new \Splot\WebLogModule\SplotWebLogModule()
-            ]);
+            $modules = array_merge(
+                $modules,
+                [
+                    new \Splot\WebLogModule\SplotWebLogModule()
+                ]
+            );
         }
 
         return $modules;
     }
 
+    /**
+     * Define some basic parameters for the app.
+     *
+     * @param string $env Env in which the app is ran.
+     * @param boolean $debug Is debug on?
+     *
+     * @return array
+     */
     public function loadParameters($env, $debug)
     {
         return [
@@ -42,12 +77,23 @@ class App extends AbstractApplication
         ];
     }
 
+    /**
+     * Provide a cache for the container.
+     *
+     * @param string $env Env in which the app is ran.
+     * @param boolean $debug Is debug on?
+     *
+     * @return ContainerCache
+     */
     public function provideContainerCache($env, $debug)
     {
         $containerCacheDir = $this->getRootDir() .'/.cache/'. $env .'/container';
         return new ContainerCache(new FileStore($containerCacheDir));
     }
 
+    /**
+     * Configure the application.
+     */
     public function configure()
     {
         parent::configure();
@@ -57,6 +103,11 @@ class App extends AbstractApplication
         $this->container->setParameter('log_error_file', $config->get('log_error_file'));
     }
 
+    /**
+     * Return the root dir of the application.
+     *
+     * @return string
+     */
     public function getRootDir()
     {
         return realpath(__DIR__ .'/../../');

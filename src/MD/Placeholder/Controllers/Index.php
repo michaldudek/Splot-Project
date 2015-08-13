@@ -3,6 +3,11 @@ namespace MD\Placeholder\Controllers;
 
 use Splot\Framework\Controller\AbstractController;
 
+/**
+ * Default landing page controller.
+ *
+ * @author Michał Pałys-Dudek <michal@michaldudek.pl>
+ */
 class Index extends AbstractController
 {
 

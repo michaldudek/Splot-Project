@@ -3,6 +3,11 @@ namespace MD\Placeholder;
 
 use Splot\Framework\Modules\AbstractModule;
 
+/**
+ * Placeholder module definition.
+ *
+ * @author Michał Pałys-Dudek <michal@michaldudek.pl>
+ */
 class MDPlaceholderModule extends AbstractModule
 {
 
@@ -17,6 +22,9 @@ class MDPlaceholderModule extends AbstractModule
      * If the module depends on other modules then return those dependencies from this method.
      *
      * It works exactly the same as application's ::loadModules().
+     *
+     * @param string    $env    Environment in which the app is running.
+     * @param boolean   $debug  Is debug mode?
      *
      * @return array
      */

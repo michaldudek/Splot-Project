@@ -4,12 +4,18 @@ namespace Tests\Application;
 use Application\App;
 
 /**
+ * AppTest
+ *
+ * @author Michał Pałys-Dudek <michal@michaldudek.pl>
+ *
  * @coversDefaultClass \Application\App
  */
 class AppTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
+     * Test modules loaded.
+     *
      * @covers ::loadModules
      */
     public function testLoadModules()
@@ -25,6 +31,8 @@ class AppTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test loaded parameters.
+     *
      * @covers ::loadParameters
      */
     public function testLoadParameters()
@@ -40,6 +48,8 @@ class AppTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test provided container cache.
+     *
      * @covers ::provideContainerCache
      */
     public function testProvideContainerCache()
@@ -51,6 +61,8 @@ class AppTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test configuration.
+     *
      * @covers ::configure
      */
     public function testConfigure()
@@ -72,6 +84,8 @@ class AppTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test getting the root dir.
+     *
      * @covers ::getRootDir
      */
     public function testGetRootDir()
