@@ -10,7 +10,7 @@
 # 
 # MDSplotProject.
 
-.PHONY: help all install install_dev clear assets warmup run prepublish postpublish css js watch test lint qa report docs noop composer composer_dev workers workers_start assets assets_install cache cache_file cache_app knit_indexes phpunit phpcs phpcs_test phpcs_fix phpcs_test_fix phpmd phpmd_test jslint npm_dev
+.PHONY: help all install install_dev clear assets warmup run prepublish postpublish css js watch test lint qa report docs noop composer composer_dev workers workers_start assets assets_install cache cache_file cache_app knit_indexes phpunit phpcs phpcs_test phpcs_fix phpcs_test_fix phpmd jslint npm_dev
 
 # Variables
 # ---------------------------------------------------------------------------
@@ -115,7 +115,7 @@ watch:
 test: phpunit
 
 # Lint the code.
-lint: phpcs phpcs_test phpmd phpmd_test jslint
+lint: phpcs phpcs_test phpmd jslint
 
 # Run tests, linters and any other quality assurance tool.
 qa: test lint
@@ -189,27 +189,23 @@ phpunit:
 
 # run PHPCS on the source code and show any style violations
 phpcs:
-	php ./vendor/bin/phpcs --standard=psr2 src
+	php ./vendor/bin/phpcs --standard="phpcs.xml" src
 
 # run PHPCBF to auto-fix code style violations
 phpcs_fix:
-	php ./vendor/bin/phpcbf --standard=psr2 src
+	php ./vendor/bin/phpcbf --standard="phpcs.xml" src
 
 # run PHPCS on the test code and show any style violations
 phpcs_test:
-	php ./vendor/bin/phpcs --standard=psr2 tests
+	php ./vendor/bin/phpcs --standard="phpcs.xml" tests
 
 # run PHPCBF on the test code to auto-fix code style violations
 phpcs_test_fix:
-	php ./vendor/bin/phpcbf --standard=psr2 tests
+	php ./vendor/bin/phpcbf --standard="phpcs.xml" tests
 
 # Run PHP Mess Detector on the source code
 phpmd:
-	php ./vendor/bin/phpmd src text naming,codesize,unusedcode,design
-
-# run PHP Mess Detector on the test code
-phpmd_test:
-	php ./vendor/bin/phpmd tests text unusedcode,design
+	php ./vendor/bin/phpmd src text ./phpmd.xml
 
 # lint the JavaScript
 jslint:
