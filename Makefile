@@ -70,7 +70,7 @@ all: help
 install: composer
 
 # Installs all dependencies (including dev dependencies)
-install_dev: composer_dev
+install_dev: composer_dev npm_dev
 
 # Clears any build artifacts, caches, installed packages, etc.
 clear: cache
@@ -88,10 +88,10 @@ run: workers
 # ---------------------------------------------------------------------------
 
 # Runs everything that needs to be ran before publishing the app.
-prepublish: noop
+prepublish: install assets_install
 
 # Runs everything that needs to be ran after the app has been published.
-postpublish: run
+postpublish: cache warmup run
 
 # Development
 # ---------------------------------------------------------------------------
@@ -148,7 +148,7 @@ composer_dev:
 	composer install --no-interaction --prefer-dist
 
 # install NPM dependencies for development
-npm_dev: npm
+npm_dev:
 	npm install
 
 # restarts Splot Workers
